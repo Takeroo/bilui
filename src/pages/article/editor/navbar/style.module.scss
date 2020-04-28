@@ -1,0 +1,23 @@
+@import 'assets/styles/mixins.scss';
+
+.topbar {
+  background: $white;
+  padding: 0 rem(100);
+  min-height: 64px;
+  height: 64px;
+  color: $text;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+
+.logo {
+  height: 64px;
+  overflow: hidden;
+  img {
+    height: 36px;
+  }
+}
+

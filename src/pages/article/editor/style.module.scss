@@ -1,0 +1,37 @@
+@import 'assets/styles/mixins.scss';
+
+.addPost {
+  max-width: rem(900);
+  margin: auto;
+
+  :global(.ant-form-item) {
+    margin-bottom: 0;
+  }
+}
+
+.label {
+  margin-bottom: 0;
+  display: block;
+}
+
+.submit {
+  margin-bottom: rem(24);
+}
+
+.editor {
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid $gray-border;
+}
+
+.block {
+  padding: rem(0) rem(150) rem(0);
+  width: 100%;
+  align-self: center;
+  position: relative;
+  z-index: 2;
+
+  @media (max-width: $md-max-width) {
+    padding: rem(0) rem(50) rem(0);
+  }
+}
