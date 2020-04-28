@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b888efdf-57b1-442c-a882-b8bddc8c624a" name="Default Changelist" comment="" />
+    <list default="true" id="b888efdf-57b1-442c-a882-b8bddc8c624a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/icons/fontawesome/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/icons/fontawesome/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/icons/fontawesome/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/icons/fontawesome/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/icons/icomoon/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/icons/icomoon/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/icons/icomoon/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/icons/icomoon/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/icons/linear/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/icons/linear/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/icons/linear/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/icons/linear/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/layout/bootstrap/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/layout/bootstrap/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/layout/card/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/layout/card/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/layout/mail-templates/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/layout/mail-templates/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/layout/typography/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/layout/typography/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/layout/utilities/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/layout/utilities/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/invoice/UnlockForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/invoice/UnlockForm/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/invoice/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/invoice/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/lockscreen/UnlockForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/lockscreen/UnlockForm/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/lockscreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/lockscreen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/lockscreen/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/lockscreen/style.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/login-alpha/LoginForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/login-alpha/LoginForm/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/login-alpha/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/login-alpha/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/login-alpha/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/login-alpha/style.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/login-beta/LoginForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/login-beta/LoginForm/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/login-beta/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/login-beta/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/login-beta/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/login-beta/style.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/pricing-table/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/pricing-table/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/pricing-table/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/pricing-table/style.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/register/RegisterForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/register/RegisterForm/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/register/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/pages/register/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/pages/register/style.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ar9JtpfsRHRJc95xyxF4Tfqh0u" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -15,6 +50,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -26,18 +62,19 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/demo" />
+      <recent name="$PROJECT_DIR$/src/pages/article/editor/form" />
+      <recent name="$PROJECT_DIR$/src/pages/article/editor/navbar" />
+      <recent name="$PROJECT_DIR$/src/pages/user/password" />
+      <recent name="$PROJECT_DIR$/src/pages/author" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/pages/home/default/latest" />
       <recent name="$PROJECT_DIR$/src/services" />
       <recent name="$PROJECT_DIR$/src/pages/article/editor/form" />
       <recent name="$PROJECT_DIR$/src/pages/article/editor" />
       <recent name="$PROJECT_DIR$/src/pages/article/editor/navbar" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/pages/article/editor/form" />
-      <recent name="$PROJECT_DIR$/src/pages/article/editor/navbar" />
-      <recent name="$PROJECT_DIR$/src/pages/user/password" />
-      <recent name="$PROJECT_DIR$/src/pages/author" />
     </key>
   </component>
   <component name="RunManager">
@@ -63,6 +100,7 @@
       <workItem from="1587547465772" duration="16270000" />
       <workItem from="1587628903912" duration="22677000" />
       <workItem from="1587695119745" duration="2149000" />
+      <workItem from="1588087937068" duration="497000" />
     </task>
     <servers />
   </component>
