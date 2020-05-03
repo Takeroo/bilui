@@ -110,7 +110,7 @@ class PublishForm extends React.Component {
                     {form.getFieldDecorator('file')(
                       <Upload.Dragger multiple={false} customRequest={(e)=> this.handleFileChange(e.file)} showUploadList={false}>
                         <p className="ant-upload-drag-icon">
-                          <Icon type="upload" />
+                          <Icon type="camera" />
                         </p>
                         <p className="ant-upload-text">
                           Pick or drag your preview image

@@ -1,0 +1,29 @@
+@import 'assets/styles/mixins.scss';
+
+
+.head {
+  height: rem(250);
+  background: $gray-lighten-more center center;
+  background-size: cover;
+  border-radius: 0.25rem;
+  line-height: 1.1;
+  padding: rem(25) rem(30);
+}
+
+.avatarUploader {
+  transition: .5s ease;
+  margin: 0;
+  cursor: pointer;
+}
+
+.icon {
+  text-align: center;
+  margin: 0;
+  background: none;
+  border: none;
+  color: white;
+  padding: 0.35rem !important;
+  i {
+    font-size: rem(20);
+  }
+}

@@ -1,13 +1,61 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
-import ProfileHead from './components/ProfileHead'
-import BlogFeed from './components/feed'
+import { connect } from 'react-redux'
+import Info from './info'
+import BlogFeed from './feed'
+import NotFoundPage from '../../404'
+import { userService } from '../../../services/user'
 import styles from './style.module.scss'
 
 
+@connect(({ user }) => ({ user }))
 class Profile extends React.Component {
 
+  constructor(props) {
+    super(props);
+    const query = new URLSearchParams(this.props.location.search);
+    const id = query.get('id');
+    let userId;
+    let redirect = false;
+    if(!id){
+      const { user } = this.props;
+      if(user && user.id){
+        userId = user.id;
+      }
+      else redirect = true;
+    }
+    else userId = id;
+
+    this.state = {
+      id: userId,
+      redirect
+    }
+  }
+
+  componentDidMount() {
+    this.getUser();
+  }
+
+  getUser = () => {
+    const { id } = this.state;
+    userService.getUser(id)
+      .then(result => {
+        this.setState({ user: result})
+      })
+      .catch(() => {
+        this.setState({ redirect: true})
+      })
+  }
+
+  updateUser = (user) => {
+    this.setState({ user})
+  }
+
   render() {
+    const { user, redirect } = this.state;
+    if(redirect) return (<Route component={NotFoundPage} />)
+
     return (
       <div>
         <Helmet title="Dashboard Beta" />
@@ -18,7 +66,7 @@ class Profile extends React.Component {
                 <div className="card-body">
                   <div className="row">
                     <div className="col-xl-12">
-                      <ProfileHead />
+                      {user && <Info author={user} updateUser={this.updateUser} /> }
                     </div>
                   </div>
                 </div>
@@ -28,7 +76,7 @@ class Profile extends React.Component {
               <div className="card">
                 <div className="card-body">
                   <div className="row">
-                    <BlogFeed />
+                    {user && <BlogFeed author={user} updateUser={this.updateUser} /> }
                   </div>
                 </div>
               </div>

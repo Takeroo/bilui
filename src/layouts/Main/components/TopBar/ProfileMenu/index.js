@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Menu, Dropdown, Avatar } from 'antd'
 import { FormattedMessage } from 'react-intl'
+import {config} from '../../../../../config'
 import styles from './style.module.scss'
 
 @connect(({ user }) => ({ user }))
@@ -28,7 +29,7 @@ class ProfileMenu extends React.Component {
         </Menu.Item>
         <Menu.Divider />
         <Menu.Item>
-          <a href="javascript: void(0);">
+          <a href="/author/profile">
             <i className={`${styles.menuIcon} icmn-user`} />
             Profile
           </a>
@@ -51,7 +52,8 @@ class ProfileMenu extends React.Component {
     return (
       <Dropdown overlay={menu} trigger={['click']}>
         <div className={styles.dropdown}>
-          <Avatar className={styles.avatar} shape="round" size="large" icon="user" />
+          {user.avatar && <Avatar className={styles.avatar} shape="round" size="large" src={`${config.apiUrl}/users/${user.id}/avatar`} />}
+          {!user.avatar && <Avatar className={styles.avatar} shape="round" size="large" icon="user" />}
         </div>
       </Dropdown>
     )
