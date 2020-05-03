@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b888efdf-57b1-442c-a882-b8bddc8c624a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/author/profile/info/avatar/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/profile/info/avatar/style.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/profile/info/cover/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/profile/info/cover/style.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/profile/info/form/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/profile/info/form/style.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/profile/info/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Main/components/TopBar/ProfileMenu/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Main/components/TopBar/ProfileMenu/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/article/editor/form/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/article/editor/form/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/author/profile/components/Avatar/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/author/profile/components/Avatar/style.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/author/profile/components/ProfileHead/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/author/profile/components/ProfileHead/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/author/profile/components/ProfileHead/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/author/profile/info/style.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/author/profile/components/feed/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/author/profile/feed/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/author/profile/components/feed/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/author/profile/feed/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/author/profile/components/feed/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/author/profile/feed/style.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/author/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/author/profile/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +76,7 @@
       <workItem from="1588183785011" duration="2851000" />
       <workItem from="1588296865994" duration="79000" />
       <workItem from="1588296952907" duration="521000" />
-      <workItem from="1588329239991" duration="13996000" />
+      <workItem from="1588329239991" duration="14203000" />
     </task>
     <servers />
   </component>

@@ -25,4 +25,9 @@ yarn.lock*
 
 package.json
 package-lock.json
+
+### WEBSTORM ###
 .idea
+*.iws
+*.iml
+*.ipr
