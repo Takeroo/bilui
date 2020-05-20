@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8d9f02edef615bd1f3e88f8617ab8a46",
+    "revision": "4367773accfb8e1ba033da6042e2f39b",
     "url": "bilui/index.html"
   },
   {
@@ -200,7 +200,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "bilui/static/css/7.b919e8b8.chunk.css"
   },
   {
-    "revision": "c076937cb1d1e1f10eed",
+    "revision": "dcd4f3e0c4a6d134c566",
     "url": "bilui/static/css/main.aaeeb214.chunk.css"
   },
   {
@@ -472,8 +472,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "bilui/static/js/7.63296ba0.chunk.js"
   },
   {
-    "revision": "c076937cb1d1e1f10eed",
-    "url": "bilui/static/js/main.1769b1b7.chunk.js"
+    "revision": "dcd4f3e0c4a6d134c566",
+    "url": "bilui/static/js/main.f7c8f326.chunk.js"
   },
   {
     "revision": "563d95c232d8ce10536d",
