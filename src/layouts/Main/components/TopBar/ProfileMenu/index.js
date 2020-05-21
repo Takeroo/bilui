@@ -40,6 +40,12 @@ class ProfileMenu extends React.Component {
             New story
           </a>
         </Menu.Item>
+        <Menu.Item>
+          <a href="/author/drafts">
+            <i className={`${styles.menuIcon} icmn-stack`} />
+            Drafts
+          </a>
+        </Menu.Item>
         <Menu.Divider />
         <Menu.Item>
           <a href="javascript: void(0);" onClick={this.logout}>

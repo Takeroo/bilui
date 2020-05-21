@@ -14,8 +14,7 @@ class Feed extends React.Component {
   }
 
   loadArticles = (pageNumber, size, title) =>{
-    const { author } = this.props
-    articleService.getArticlesByUser(author.id, pageNumber, size, title).then(page => {
+    articleService.getArticles(pageNumber, size, title).then(page => {
       this.setState({articles: page.content, page});
     })
   }

@@ -7,21 +7,26 @@ import styles from './style.module.scss'
 class Latest extends Component {
 
   state = {
-    articles:[]
+    articles:[],
   };
 
   componentDidMount() {
     this.loadArticles();
   }
 
-  loadArticles = () =>{
-    articleService.getArticles().then(result => {
-      this.setState({articles: result});
+  loadArticles = (pageNumber, size, title) =>{
+    articleService.getArticles(pageNumber, size, title).then(page => {
+      this.setState({articles: page.content, page});
     })
   }
 
+  onPageChanged = (pageNumber, pageSize) => {
+    this.loadArticles(pageNumber - 1, pageSize);
+  }
+
+
   render() {
-    const { articles } = this.state;
+    const { articles, page } = this.state;
     return (
       <div className={styles.block}>
         <section className="card">
@@ -54,11 +59,13 @@ class Latest extends Component {
                             </li>
                           </ul>
                         </div>
-                        <div className={styles.articleMedia}>
-                          <a href="javascript: void(0);" className={styles.link}>
-                            <img src={`${config.apiUrl}/images/${article.imageId}`} alt={article.title} />
-                          </a>
-                        </div>
+                        {article.imageId &&
+                          <div className={styles.articleMedia}>
+                            <a href="javascript: void(0);" className={styles.link}>
+                              <img src={`${config.apiUrl}/images/${article.imageId}`} alt={article.title} />
+                            </a>
+                          </div>
+                        }
                         <div className={styles.content}>
                           <div dangerouslySetInnerHTML={{ __html: article.subtitle }} />
                           <div className={styles.articleMore}>
@@ -72,7 +79,7 @@ class Latest extends Component {
                           <div className="row">
                             <div className="col-8">
                               <div className={styles.hashtags}>
-                                {article.tags.map(tag => (
+                                {article.tags && article.tags.map(tag => (
                                   <a href="javascript: void(0);" key={tag.id}>
                                     {tag.name}
                                   </a>
@@ -103,9 +110,11 @@ class Latest extends Component {
                       </article>
                     ))}
                   </main>
-                  <div className="mb-5">
-                    <Pagination defaultCurrent={1} total={50} />
-                  </div>
+                  {page && page.totalPages > 1 &&
+                    <div className="mb-5">
+                      <Pagination defaultCurrent={1} current={page.number + 1} total={page.totalElements} pageSize={10} onChange={this.onPageChanged} />
+                    </div>
+                  }
                 </div>
               </div>
             </div>

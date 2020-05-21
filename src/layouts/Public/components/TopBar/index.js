@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import HomeMenu from './HomeMenu'
 import LiveSearch from './LiveSearch'
-import ProfileMenu from './ProfileMenu'
 import LanguageSelector from './LanguageSelector'
 import styles from './style.module.scss'
 
@@ -27,10 +25,14 @@ class TopBar extends React.Component {
         <div className="mr-4">
           <LanguageSelector />
         </div>
-        <div className="mr-4" style={{display: 'none'}}>
-          <HomeMenu />
+        <div className="mr-4">
+          <a className={styles.navigationActive} href="/user/login">
+            Login
+          </a>
         </div>
-        <ProfileMenu />
+        <a className={styles.navigationActive} href="/user/register">
+          Register
+        </a>
       </div>
     )
   }

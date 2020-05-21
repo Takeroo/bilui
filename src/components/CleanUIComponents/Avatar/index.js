@@ -10,13 +10,13 @@ class Avatar extends React.Component {
   }
 
   render() {
-    const { size, borderColor, src, border } = this.props
+    const { size, borderColor, src, border, href } = this.props
     return (
       <a
         className={`${style.avatar} ${size ? style[`size${size}`] : ''} ${
           border ? style.border : ''
         }`}
-        href="javascript: void(0);"
+        href={href}
         style={{
           borderColor,
         }}

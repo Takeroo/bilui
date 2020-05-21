@@ -41,13 +41,11 @@ class Login extends Component {
                   <Form layout="vertical" hideRequiredMark onSubmit={this.onSubmit}>
                     <Form.Item label="Email">
                       {form.getFieldDecorator('email', {
-                        initialValue: 'talgarmarlis@gmail.com',
                         rules: [{ required: true, message: 'Please input your e-mail address' }],
                       })(<Input size="default" />)}
                     </Form.Item>
                     <Form.Item label="Password">
                       {form.getFieldDecorator('password', {
-                        initialValue: 'admin',
                         rules: [{ required: true, message: 'Please input your password' }],
                       })(<Input size="default" type="password" />)}
                     </Form.Item>
@@ -81,23 +79,6 @@ class Login extends Component {
                         </a>{' '}
                         if you don&#39;t have account
                       </span>
-                    </div>
-                    <div className="form-group">
-                      <p>Use another service to Log In</p>
-                      <div className="mt-2">
-                        <a href="javascript: void(0);" className="btn btn-icon mr-2">
-                          <i className="icmn-facebook" />
-                        </a>
-                        <a href="javascript: void(0);" className="btn btn-icon mr-2">
-                          <i className="icmn-google" />
-                        </a>
-                        <a href="javascript: void(0);" className="btn btn-icon mr-2">
-                          <i className="icmn-windows" />
-                        </a>
-                        <a href="javascript: void(0);" className="btn btn-icon mr-2">
-                          <i className="icmn-twitter" />
-                        </a>
-                      </div>
                     </div>
                   </Form>
                 </div>

@@ -47,7 +47,14 @@ export const routes = [
     path: '/article/edit',
     component: loadable(() => import('pages/article/editor')),
     exact: true,
-    layout: 'public'
+    layout: 'clean',
+    private: true
+  },
+  {
+    path: '/article/details',
+    component: loadable(() => import('pages/article/details')),
+    exact: true,
+    layout: 'main'
   },
 
   // home
@@ -64,6 +71,13 @@ export const routes = [
     component: loadable(() => import('pages/author/profile')),
     exact: true,
     layout: 'main'
+  },
+  {
+    path: '/author/drafts',
+    component: loadable(() => import('pages/author/drafts')),
+    exact: true,
+    layout: 'main',
+    private: true
   },
 
   // Dashboards

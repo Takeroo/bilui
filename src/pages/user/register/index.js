@@ -223,23 +223,6 @@ class Register extends Component {
                           if you have an account
                         </span>
                       </div>
-                      <div className="form-group">
-                        <p>Use another service to Log In</p>
-                        <div className="mt-2">
-                          <a href="javascript: void(0);" className="btn btn-icon mr-2">
-                            <i className="icmn-facebook" />
-                          </a>
-                          <a href="javascript: void(0);" className="btn btn-icon mr-2">
-                            <i className="icmn-google" />
-                          </a>
-                          <a href="javascript: void(0);" className="btn btn-icon mr-2">
-                            <i className="icmn-windows" />
-                          </a>
-                          <a href="javascript: void(0);" className="btn btn-icon mr-2">
-                            <i className="icmn-twitter" />
-                          </a>
-                        </div>
-                      </div>
                     </Form>
                   </div>
                 }

@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import Info from './info'
-import BlogFeed from './feed'
+import Feed from './feed'
 import NotFoundPage from '../../404'
 import { userService } from '../../../services/user'
 import styles from './style.module.scss'
@@ -58,7 +58,7 @@ class Profile extends React.Component {
 
     return (
       <div>
-        <Helmet title="Dashboard Beta" />
+        <Helmet title="User Profile" />
         <div className={styles.block}>
           <div className="row">
             <div className="col-lg-12">
@@ -72,14 +72,9 @@ class Profile extends React.Component {
                 </div>
               </div>
             </div>
+
             <div className="col-lg-12">
-              <div className="card">
-                <div className="card-body">
-                  <div className="row">
-                    {user && <BlogFeed author={user} updateUser={this.updateUser} /> }
-                  </div>
-                </div>
-              </div>
+              {user && <Feed author={user} updateUser={this.updateUser} /> }
             </div>
           </div>
         </div>

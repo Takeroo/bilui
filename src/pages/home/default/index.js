@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import { Helmet } from 'react-helmet'
-import Latest from './latest'
+import Feed from './feed'
 
 class Home extends Component {
   render() {
     return (
       <div>
         <Helmet title="Home" />
-        <Latest />
+        <div className="row">
+          <div className="col-lg-2" />
+          <div className="col-lg-8">
+            <Feed />
+          </div>
+          <div className="col-lg-2" />
+        </div>
       </div>
     )
   }

@@ -5,6 +5,7 @@ import NProgress from 'nprogress'
 import { Helmet } from 'react-helmet'
 import Loader from 'components/LayoutComponents/Loader'
 import DefaultLayout from './Default'
+import Clean from './Clean'
 import PublicLayout from './Public'
 import LoginLayout from './Login'
 import MainLayout from './Main'
@@ -15,6 +16,7 @@ const Layouts = {
   public: PublicLayout,
   login: LoginLayout,
   main: MainLayout,
+  clean: Clean
 }
 
 @withRouter
@@ -59,10 +61,21 @@ class IndexLayout extends React.PureComponent {
       return 'public';
     }
 
-    const Container = Layouts[getLayout()]
+    const isPrivate = () => {
+      for(let i = 0; i < routes.length; i += 1){
+        if(routes[i].path === pathname){
+          if(routes[i].private) return true;
+          return false;
+        }
+      }
+      return false;
+    }
+
+    const isPrivatePage = isPrivate()
     const isUserAuthorized = user.authorized
     const isUserLoading = user.loading
     const isLoginLayout = getLayout() === 'login'
+    const Container = isUserAuthorized || isLoginLayout ? Layouts[getLayout()] : Layouts.public
 
     const BootstrappedLayout = () => {
       // show loader when user in check authorization process, not authorized yet and not on login pages
@@ -70,7 +83,7 @@ class IndexLayout extends React.PureComponent {
         return <Loader />
       }
       // redirect to login page if current is not login page and user not authorized
-      if (!isLoginLayout && !isUserAuthorized) {
+      if (!isLoginLayout && !isUserAuthorized && isPrivatePage) {
         return <Redirect to="/user/login" />
       }
       // redirect to main dashboard when user on login page and authorized

@@ -181,8 +181,8 @@ class Editor extends React.Component {
                               theme="bubble"
                               onChange={this.handleChange}
                               value={body}
-                              modules={Editor.modules}
-                              formats={Editor.formats}
+                              modules={modules}
+                              formats={formats}
                               placeholder='TELL YOUR STORY..'
                             />
                           </div>
@@ -200,11 +200,12 @@ class Editor extends React.Component {
   }
 }
 
-Editor.modules = {
+const modules = {
   toolbar: [
     [{ header: '1' }, { header: '2' }, { font: [] }],
     [{ size: [] }],
-    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
+    [{ 'color': [] }, { 'background': [] }],
     [
       { list: 'ordered' },
       { list: 'bullet' },
@@ -212,7 +213,7 @@ Editor.modules = {
       { indent: '+1' },
     ],
     ['link', 'image', 'video'],
-    ['clean'],
+    // ['clean'],
   ],
   clipboard: {
     // toggle to add extra line breaks when pasting HTML:
@@ -223,7 +224,7 @@ Editor.modules = {
  * Quill editor formats
  * See https://quilljs.com/docs/formats/
  */
-Editor.formats = [
+const formats = [
   'header',
   'font',
   'size',
@@ -239,12 +240,5 @@ Editor.formats = [
   'image',
   'video',
 ];
-
-/*
- * PropType validation
-//  */
-// Editor.propTypes = {
-//   placeholder: PropTypes.string,
-// };
 
 export default Editor;
