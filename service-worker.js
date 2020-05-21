@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "bilui/precache-manifest.d0adc72e4696673b26784fa14b2cdfab.js"
+  "bilui/precache-manifest.71e9a7a1196cf54c54e540246e51603e.js"
 );
 
 self.addEventListener('message', (event) => {
