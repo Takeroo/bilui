@@ -2,50 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b888efdf-57b1-442c-a882-b8bddc8c624a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/config_prod.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Clean/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Public/components/Footer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Public/components/Footer/style.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Public/components/TopBar/LanguageSelector/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Public/components/TopBar/LanguageSelector/style.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Public/components/TopBar/LiveSearch/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Public/components/TopBar/LiveSearch/style.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Public/components/TopBar/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/Public/components/TopBar/style.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/article/details/CommentForm/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/article/details/data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/article/details/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/article/details/style.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/drafts/data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/drafts/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/drafts/pagedDrafts/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/drafts/pagedDrafts/style.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/drafts/style.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/profile/feed/post/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/author/profile/feed/post/style.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CleanUIComponents/Avatar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CleanUIComponents/Avatar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Main/components/TopBar/ProfileMenu/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Main/components/TopBar/ProfileMenu/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Main/components/TopBar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Main/components/TopBar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Public/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Public/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/article/editor/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/article/editor/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/article/editor/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/article/editor/style.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/author/profile/feed/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/author/profile/feed/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/author/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/author/profile/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/demo/apps/profile/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/apps/profile/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/demo/blog/post/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/demo/blog/post/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/default/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/default/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/default/latest/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/default/latest/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/user/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/register/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/article.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/article.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/draft.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/draft.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

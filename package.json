@@ -2,7 +2,7 @@
   "name": "clean-ui-admin-template-cra",
   "version": "2.1.2",
   "private": true,
-  "homepage": "bilui/",
+  "homepage": "/./",
   "scripts": {
     "start": "BROWSER=yandex react-app-rewired start",
     "build": "cp ./src/config.js ./src/config.bak.js && cp ./src/config_prod.js ./src/config.js && react-app-rewired build && mv ./src/config.bak.js ./src/config.js",
