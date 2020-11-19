@@ -24,7 +24,7 @@ export function* LOGIN({ payload }) {
   else{
     yield put({
       payload: {
-        loading: true,
+        loading: false,
       }
     })
   }

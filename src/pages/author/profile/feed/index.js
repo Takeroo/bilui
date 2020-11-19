@@ -1,4 +1,5 @@
 import React from 'react'
+import {FormattedMessage} from 'react-intl'
 import { Pagination } from 'antd'
 import Post from './post'
 import { articleService } from '../../../../services'
@@ -32,7 +33,7 @@ class Feed extends React.Component {
         <div className="row">
           <div className="col-lg-12">
             <div className="utils__title mb-3">
-              <strong>Latest Posts</strong>
+              <strong><FormattedMessage id="author.profile.feed.latestPosts" /></strong>
             </div>
           </div>
         </div>

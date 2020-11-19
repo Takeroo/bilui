@@ -22,7 +22,6 @@ async function login(email, password) {
   };
   return fetch(`${config.apiUrl}/auth/signin`, requestOptions).then(request.handleResponse)
     .then(auth => {
-      console.log(auth)
       // store user details and jwt token in local storage to keep user logged in between page refreshes
       localStorage.setItem('auth', JSON.stringify(auth));
     })

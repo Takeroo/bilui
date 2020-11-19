@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { connect } from 'react-redux'
 import { Button } from 'antd'
 import UpdateForm from './form'
@@ -21,7 +22,7 @@ class Info extends React.Component {
   }
 
   render() {
-    const { user, author, updateUser} = this.props;
+    const { user, author, updateUser, intl} = this.props;
     const {formStatus} = this.state;
     return (
       <>
@@ -39,11 +40,11 @@ class Info extends React.Component {
                 <div className="pull-right">
                   <Button type="default" onClick={() => this.toggleForm()}>
                     <i className='fa fa-pencil mr-2' />
-                    Edit
+                    <FormattedMessage id="author.profile.info.edit" />
                   </Button>
                 </div>
               }
-              {author.id === user.id &&  <p>{author.bio || `Your bio`}</p>}
+              {author.id === user.id &&  <p>{author.bio || intl.formatMessage({id: 'author.profile.info.bio'})}</p>}
               {!author.id === user.id && <p>{author.bio}</p>}
             </div>
           </div>
@@ -52,4 +53,4 @@ class Info extends React.Component {
     )
   }
 }
-export default Info
+export default injectIntl(Info)

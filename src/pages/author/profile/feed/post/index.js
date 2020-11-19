@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
 import { Button } from 'antd'
 import Avatar from 'components/CleanUIComponents/Avatar'
@@ -21,7 +22,7 @@ class Post extends React.Component {
               </div>
             </div>
             <div className="pull-left">
-              <a href={`/author/profile?id=${author.id}`}><strong>{`${author.name} ${author.surname}`}</strong></a>
+              <a href={`/#/author/profile?id=${author.id}`}><strong>{`${author.name} ${author.surname}`}</strong></a>
               <br />
               <span className="text-muted">{moment(new Date(article.createdAt)).fromNow()}</span>
             </div>
@@ -40,7 +41,7 @@ class Post extends React.Component {
                   <article className={styles.article} key={article.id}>
                     {article.imageId &&
                       <div className={styles.articleMedia}>
-                        <a href={`/article/details?id=${article.id}`} className={styles.link}>
+                        <a href={`/#/article/details?id=${article.id}`} className={styles.link}>
                           <img src={`${config.apiUrl}/images/${article.imageId}`} alt={article.title} />
                         </a>
                       </div>
@@ -49,7 +50,7 @@ class Post extends React.Component {
                     <div className={styles.information}>
                       <div className={styles.title}>
                         <h1>
-                          <a href={`/article/details?id=${article.id}`}>{article.title}</a>
+                          <a href={`/#/article/details?id=${article.id}`}>{article.title}</a>
                         </h1>
                       </div>
                     </div>
@@ -57,9 +58,9 @@ class Post extends React.Component {
                     <div className={styles.content}>
                       <div dangerouslySetInnerHTML={{ __html: article.subtitle }} />
                       <div className={styles.articleMore}>
-                        <a href={`/article/details?id=${article.id}`}>
+                        <a href={`/#/article/details?id=${article.id}`}>
                           <Button type="default">
-                            Read more
+                            <FormattedMessage id="author.profile.feed.post.readMore" />
                             <i className="ml-2 fa fa-angle-right" aria-hidden="true" />
                           </Button>
                         </a>

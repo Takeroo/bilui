@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FormattedMessage } from 'react-intl'
 import LiveSearch from './LiveSearch'
 import LanguageSelector from './LanguageSelector'
 import styles from './style.module.scss'
@@ -26,12 +27,12 @@ class TopBar extends React.Component {
           <LanguageSelector />
         </div>
         <div className="mr-4">
-          <a className={styles.navigationActive} href="/user/login">
-            Login
+          <a className={styles.navigationActive} href="/#/user/login">
+            <FormattedMessage id="topBar.login" />
           </a>
         </div>
-        <a className={styles.navigationActive} href="/user/register">
-          Register
+        <a className={styles.navigationActive} href="/#/user/register">
+          <FormattedMessage id="topBar.register" />
         </a>
       </div>
     )

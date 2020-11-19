@@ -1,4 +1,5 @@
 import React from 'react'
+import { injectIntl } from 'react-intl'
 import { Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
@@ -53,12 +54,13 @@ class Profile extends React.Component {
   }
 
   render() {
+    const { intl } = this.props;
     const { user, redirect } = this.state;
     if(redirect) return (<Route component={NotFoundPage} />)
 
     return (
       <div>
-        <Helmet title="User Profile" />
+        <Helmet title={intl.formatMessage({id: 'author.profile'})} />
         <div className={styles.block}>
           <div className="row">
             <div className="col-lg-12">
@@ -83,4 +85,4 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile
+export default injectIntl(Profile)

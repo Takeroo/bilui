@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { Form, Input, Button, Checkbox } from 'antd'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
@@ -25,40 +26,42 @@ class Login extends Component {
     const {
       form,
       user: { loading },
+      intl,
     } = this.props
+
     return (
       <div>
-        <Helmet title="Login" />
+        <Helmet title={intl.formatMessage({id:'user.login'})} />
         <div className={styles.block}>
           <div className="row">
             <div className="col-xl-12">
               <div className={styles.inner}>
                 <div className={styles.form}>
                   <h4 className="text-uppercase">
-                    <strong>Please log in</strong>
+                    <strong><FormattedMessage id="user.login.header" /></strong>
                   </h4>
                   <br />
                   <Form layout="vertical" hideRequiredMark onSubmit={this.onSubmit}>
-                    <Form.Item label="Email">
+                    <Form.Item label={intl.formatMessage({id:'user.login.email'})}>
                       {form.getFieldDecorator('email', {
-                        rules: [{ required: true, message: 'Please input your e-mail address' }],
+                        rules: [{ required: true, message: intl.formatMessage({id:'user.login.emailMessage'}) }],
                       })(<Input size="default" />)}
                     </Form.Item>
-                    <Form.Item label="Password">
+                    <Form.Item label={intl.formatMessage({id:'user.login.password'})}>
                       {form.getFieldDecorator('password', {
-                        rules: [{ required: true, message: 'Please input your password' }],
+                        rules: [{ required: true, message: intl.formatMessage({id:'user.login.passwordMessage'}) }],
                       })(<Input size="default" type="password" />)}
                     </Form.Item>
                     <Form.Item>
                       {form.getFieldDecorator('remember', {
                         valuePropName: 'checked',
                         initialValue: true,
-                      })(<Checkbox>Remember me</Checkbox>)}
+                      })(<Checkbox><FormattedMessage id="user.login.remember" /></Checkbox>)}
                       <Link
                         to="/user/password/forgot"
                         className="utils__link--blue utils__link--underlined pull-right"
                       >
-                        Forgot password?
+                        <FormattedMessage id="user.login.forgotPassword" />
                       </Link>
                     </Form.Item>
                     <div className="form-actions">
@@ -68,16 +71,16 @@ class Login extends Component {
                         htmlType="submit"
                         loading={loading}
                       >
-                        Login
+                        <FormattedMessage id="user.login" />
                       </Button>
                       <span className="ml-3 register-link">
                         <a
-                          href="/user/register"
+                          href="/#/user/register"
                           className="text-primary utils__link--underlined"
                         >
-                          Register
+                          <FormattedMessage id="user.login.register" />
                         </a>{' '}
-                        if you don&#39;t have account
+                        <FormattedMessage id="user.login.registerMessage" />
                       </span>
                     </div>
                   </Form>
@@ -91,4 +94,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default injectIntl(Login)

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { Form, Input, Button, notification } from 'antd'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
@@ -33,11 +34,11 @@ class Forgot extends Component {
   }
 
   render() {
-    const { form } = this.props
+    const { form, intl } = this.props
     const { loading, success } = this.state
     return (
       <div>
-        <Helmet title="Forgot" />
+        <Helmet title={intl.formatMessage({id:'user.password.forgot'})} />
         <div className={styles.block}>
           <div className="row">
             <div className="col-xl-12">
@@ -45,19 +46,19 @@ class Forgot extends Component {
                 {!success &&
                   <div className={styles.form}>
                     <h4 className="text-uppercase">
-                      <strong>Restore Password</strong>
+                      <strong><FormattedMessage id="user.password.forgot.restore" /></strong>
                     </h4>
                     <br />
                     <Form layout="vertical" hideRequiredMark onSubmit={this.onSubmit}>
-                      <Form.Item label="Email address">
+                      <Form.Item label={intl.formatMessage({id:'user.password.forgot.email'})}>
                         {form.getFieldDecorator('email', {
                           initialValue: '',
-                          rules: [{ required: true, message: 'Please input email' }],
+                          rules: [{ required: true, message: intl.formatMessage({id:'user.password.forgot.emailMessage'}) }],
                         })(<Input size="default" type="email" />)}
                       </Form.Item>
                       <div className="mb-2">
                         <Link to="/user/login" className="utils__link--blue utils__link--underlined">
-                          Back to login
+                          <FormattedMessage id="user.password.forgot.back" />
                         </Link>
                       </div>
                       <div className="form-actions">
@@ -67,7 +68,7 @@ class Forgot extends Component {
                           htmlType="submit"
                           loading={loading}
                         >
-                          Restore Password
+                          <FormattedMessage id="user.password.forgot.restore" />
                         </Button>
                       </div>
                     </Form>
@@ -76,11 +77,11 @@ class Forgot extends Component {
                 {success &&
                   <div>
                     <h4>
-                      <strong>Instructions has been sent to your email.</strong>
+                      <strong><FormattedMessage id="user.password.forgot.instructions" /></strong>
                     </h4>
-                    <p className="mb-3">Please, follow the instructions to reset your password.</p>
+                    <p className="mb-3"><FormattedMessage id="user.password.forgot.instructionsMessage" /></p>
                     <Link to="/user/login" className="btn">
-                      &larr; Sign in to continue
+                      &larr;  <FormattedMessage id="user.password.forgot.continue" />
                     </Link>
                   </div>
                 }
@@ -93,4 +94,4 @@ class Forgot extends Component {
   }
 }
 
-export default Forgot
+export default injectIntl(Forgot)

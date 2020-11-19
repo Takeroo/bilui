@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { connect } from 'react-redux'
 import { Button, Tabs } from 'antd'
 import { Helmet } from 'react-helmet'
@@ -11,10 +12,10 @@ const { TabPane } = Tabs
 class ProfileApp extends React.Component {
 
   render() {
-    const { user } = this.props;
+    const { user, intl } = this.props;
     return (
       <div>
-        <Helmet title="Drafts" />
+        <Helmet title={intl.formatMessage({id: 'author.drafts'})} />
         <div className={style.profile}>
           <div className="row">
             <div className="col-xl-12">
@@ -22,15 +23,15 @@ class ProfileApp extends React.Component {
                 <div>
                   <h2>
                     <span className="text-black mr-2">
-                      <strong>Your stories</strong>
+                      <strong><FormattedMessage id='author.drafts.stories' /></strong>
                     </span>
                   </h2>
                 </div>
                 <div className={style.socialCounts}>
-                  <a href="/article/edit">
+                  <a href="/#/article/edit">
                     <Button type="primary" ghost>
                       <i className="icmn-quill mr-2" />
-                      Write a story
+                      <FormattedMessage id='author.drafts.write' />
                     </Button>
                   </a>
                 </div>
@@ -41,7 +42,8 @@ class ProfileApp extends React.Component {
                     <TabPane
                       tab={
                         <span>
-                          <i className="icmn-stack mr-1" /> Drafts
+                          <i className="icmn-stack mr-1" />
+                          <FormattedMessage id='author.drafts' />
                         </span>
                       }
                       key="1"
@@ -51,7 +53,8 @@ class ProfileApp extends React.Component {
                     <TabPane
                       tab={
                         <span>
-                          <i className="icmn-menu mr-1" /> Published
+                          <i className="icmn-menu mr-1" />
+                          <FormattedMessage id='author.drafts.published' />
                         </span>
                       }
                       key="2"
@@ -69,4 +72,4 @@ class ProfileApp extends React.Component {
   }
 }
 
-export default ProfileApp
+export default injectIntl(ProfileApp)

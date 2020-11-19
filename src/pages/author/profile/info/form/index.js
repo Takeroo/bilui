@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { Button, Form, Input } from 'antd'
 import { Scrollbars } from 'react-custom-scrollbars'
 import styles from './style.module.scss'
@@ -28,7 +29,7 @@ class PublishForm extends React.Component {
   }
 
   render() {
-    const { enabled, toggleForm, form, user } = this.props
+    const { enabled, toggleForm, form, user, intl } = this.props
     const { tags, loading } = this.state;
 
     return (
@@ -38,7 +39,7 @@ class PublishForm extends React.Component {
         <Scrollbars style={{ height: '100vh' }}>
           <div className={styles.container}>
             <div className={styles.title}>
-              Update your info
+              <FormattedMessage id="author.profile.info.updateInfo" />
               <button
                 className={`${styles.close} fa fa-times`}
                 onClick={() => toggleForm()}
@@ -51,18 +52,18 @@ class PublishForm extends React.Component {
                 <Form.Item>
                   {form.getFieldDecorator('name', {
                     initialValue: user.name,
-                    rules: [{ required: true, message: 'Provide your name' }],
+                    rules: [{ required: true, message: intl.formatMessage({id: 'author.profile.info.nameMessage'}) }],
                   })(
-                    <Input placeholder="Name" />,
+                    <Input placeholder={intl.formatMessage({id: 'author.profile.info.name'})} />,
                   )}
                 </Form.Item>
 
                 <Form.Item>
                   {form.getFieldDecorator('surname', {
                     initialValue: user.surname,
-                    rules: [{ required: true, message: 'Provide your surname' }],
+                    rules: [{ required: true, message: intl.formatMessage({id: 'author.profile.info.surnameMessage'}) }],
                   }, tags)(
-                    <Input placeholder="Surname" />,
+                    <Input placeholder={intl.formatMessage({id: 'author.profile.info.surname'})} />,
                   )}
                 </Form.Item>
               </div>
@@ -73,7 +74,7 @@ class PublishForm extends React.Component {
                   {form.getFieldDecorator('mind', {
                     initialValue: user.mind
                   }, tags)(
-                    <Input placeholder="What is on your mind?" />,
+                    <Input placeholder={intl.formatMessage({id: 'author.profile.info.mindMessage'})} />,
                   )}
                 </Form.Item>
               </div>
@@ -83,7 +84,7 @@ class PublishForm extends React.Component {
                   {form.getFieldDecorator('bio', {
                     initialValue: user.bio
                   }, tags)(
-                    <Input.TextArea rows={4} placeholder="Tell us about yourself.." />,
+                    <Input.TextArea rows={4} placeholder={intl.formatMessage({id: 'author.profile.info.bioMessage'})} />,
                   )}
                 </Form.Item>
               </div>
@@ -94,7 +95,7 @@ class PublishForm extends React.Component {
                   htmlType="submit"
                   loading={loading}
                 >
-                  Publish
+                  <FormattedMessage id="author.profile.info.update" />
                 </Button>
               </div>
             </Form>
@@ -105,4 +106,4 @@ class PublishForm extends React.Component {
   }
 }
 
-export default PublishForm;
+export default injectIntl(PublishForm);

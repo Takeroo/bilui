@@ -71,7 +71,7 @@ class BlogPost extends React.Component {
                       {!author.avatar && <Avatar size="50" src="/resources/images/avatar.jpg" border={false} href={`/author/profile?id=${author.id}`} />}
                     </div>
                     <div className="pull-left">
-                      <a href={`/author/profile?id=${author.id}`}><strong>{`${author.name} ${author.surname}`}</strong></a>
+                      <a href={`/#/author/profile?id=${author.id}`}><strong>{`${author.name} ${author.surname}`}</strong></a>
                       <br />
                       <small className="text-muted">{moment(article.createdAt).fromNow()}</small>
                     </div>
@@ -148,7 +148,7 @@ class BlogPost extends React.Component {
                       <Avatar src={`${config.apiUrl}/users/${author.id}/avatar`} size="110" href={`/author/profile?id=${author.id}`} />
                     </div>
                     <div className={styles.authorInf}>
-                      <a href={`/author/profile?id=${author.id}`}>
+                      <a href={`/#/author/profile?id=${author.id}`}>
                         <span className={styles.authorName}>{`${author.name} ${author.surname}`}</span>
                       </a>
                       <p className={styles.authorWords}>&ldquo;{author.bio}&rdquo;</p>

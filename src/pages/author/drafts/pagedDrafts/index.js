@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { FormattedMessage } from 'react-intl'
 import { Dropdown, Icon, Menu, Pagination, Modal } from 'antd'
 import { draftService } from '../../../../services'
 import style from '../style.module.scss'
@@ -67,20 +68,23 @@ class PagedDrafts extends Component {
                   <Dropdown overlay={
                     <Menu>
                       <Menu.Item>
-                        <a href={`/article/edit?id=${draft.id}`}>
-                          <Icon type="edit" /> Edit
+                        <a href={`/#/article/edit?id=${draft.id}`}>
+                          <Icon type="edit" />
+                          <FormattedMessage id='author.drafts.edit' />
                         </a>
                       </Menu.Item>
                       <Menu.Item>
                         <a href="javascript: void(0);" onClick={() => this.handleDelete(draft)}>
-                          <Icon type="delete" /> Delete
+                          <Icon type="delete" />
+                          <FormattedMessage id='author.drafts.delete' />
                         </a>
                       </Menu.Item>
                     </Menu>
                   }
                   >
                     <a className="ant-dropdown-link" href="javascript: void(0);">
-                      Actions <Icon type="down" />
+                      <FormattedMessage id='author.drafts.actions' />
+                      <Icon type="down" />
                     </a>
                   </Dropdown>
                 </div>

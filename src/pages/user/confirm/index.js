@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { Helmet } from 'react-helmet'
 import { Link, Route } from 'react-router-dom'
 import Loader from 'components/LayoutComponents/Loader'
@@ -29,11 +30,12 @@ class Confirm extends Component {
   }
 
   render() {
+    const {intl} = this.props;
     const {  token, user, loading, success, failure, message } = this.state
     if(!token) return (<Route component={NotFoundPage} />)
     return (
       <div>
-        <Helmet title="Register" />
+        <Helmet title={intl.formatMessage({id:'user.confirm'})} />
         <div className={styles.block}>
           <div className="row">
             <div className="col-xl-12">
@@ -42,11 +44,19 @@ class Confirm extends Component {
                 <div className={styles.inner}>
                   <div>
                     <h4>
-                      <strong>Hey {user.name}, thank you for your registration.</strong>
+                      <strong>
+                        <FormattedMessage id="user.confirm.hi" />
+                        {user.name},
+                        <FormattedMessage id="user.confirm.thanks" />
+                      </strong>
                     </h4>
-                    <p className="mb-3">Your email {user.email} has been verified.</p>
+                    <p className="mb-3">
+                      <FormattedMessage id="user.confirm.email" />
+                      {user.email}
+                      <FormattedMessage id="user.confirm.verified" />
+                    </p>
                     <Link to="/user/login" className="btn">
-                      &larr; Sign in to continue
+                      &larr; <FormattedMessage id="user.register.continue" />
                     </Link>
                   </div>
                 </div>
@@ -55,12 +65,12 @@ class Confirm extends Component {
                 <div className={styles.inner}>
                   <div>
                     <h4>
-                      <strong>Email address was not verified</strong>
+                      <strong><FormattedMessage id="user.confirm.notVerified" /></strong>
                     </h4>
-                    <p className="mb-3">Please, see the below message to know what went wrong</p>
+                    <p className="mb-3"><FormattedMessage id="user.confirm.notVerifiedMessage" /></p>
                     <p className="mb-3">{ message }</p>
                     <Link to="/user/login" className="btn">
-                      &larr; Sign in to continue
+                      &larr; <FormattedMessage id="user.register.continue" />
                     </Link>
                   </div>
                 </div>
@@ -73,4 +83,4 @@ class Confirm extends Component {
   }
 }
 
-export default Confirm
+export default injectIntl(Confirm)

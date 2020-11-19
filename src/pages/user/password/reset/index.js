@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { Form, Input, Button, notification, Icon } from 'antd'
 import { Helmet } from 'react-helmet'
 import { Link, Route } from 'react-router-dom'
@@ -54,9 +55,9 @@ class Reset extends Component {
   }
 
   compareToFirstPassword = (rule, value, callback) => {
-    const { form } = this.props
+    const { form, intl } = this.props
     if (value && value !== form.getFieldValue('password')) {
-      callback('Your password and confirmation does not match!')
+      callback(intl.formatMessage({ id: 'user.password.reset.confirmationError'}))
     } else {
       callback()
     }
@@ -80,37 +81,43 @@ class Reset extends Component {
   }
 
   render() {
-    const { form } = this.props
+    const { form, intl } = this.props
     const { loading, valid, invalid, token, tokenLoad, message, user, success } = this.state
     if(!token) return (<Route component={NotFoundPage} />)
 
     return (
       <div>
-        <Helmet title="Forgot" />
+        <Helmet title={intl.formatMessage({id:'user.password.reset'})} />
         <div className={styles.block}>
           <div className="row">
             <div className="col-xl-12">
               {tokenLoad && <Loader />}
+
               {success &&
                 <div className={styles.inner}>
                   <div>
                     <h4 className="text-uppercase">
-                      <strong>Password updated</strong>
+                      <FormattedMessage id="user.password.reset.updated" />
                     </h4>
-                    <p className="mb-3">Your password has been successfully updated</p>
+                    <p className="mb-3"><FormattedMessage id="user.password.reset.updatedMessage" /></p>
                     <Link to="/user/login" className="btn">
-                      &larr; Sign in to continue
+                      &larr; <FormattedMessage id="user.password.reset.continue" />
                     </Link>
                   </div>
                 </div>
               }
+
               {valid &&
                 <div className={styles.inner}>
                   <div className={styles.form}>
                     <h4 className="text-uppercase">
-                      <strong>Reset Password</strong>
+                      <strong><FormattedMessage id="user.password.reset" /></strong>
                     </h4>
-                    <p className="mb-3">Hey {user.name}, please reset your password</p>
+                    <p className="mb-3">
+                      <FormattedMessage id="user.password.reset.hi" />
+                      { ` ${user.name}, `}
+                      <FormattedMessage id="user.password.reset.resetPassword" />
+                    </p>
                     <br />
                     <Form layout="vertical" hideRequiredMark onSubmit={this.onSubmit}>
                       <Form.Item hasFeedback>
@@ -118,7 +125,7 @@ class Reset extends Component {
                           rules: [
                             {
                               required: true,
-                              message: 'Please input your password'
+                              message: intl.formatMessage({id:'user.password.reset.newPasswordMessage'})
                             },
                             {
                               validator: this.validateToNextPassword,
@@ -128,7 +135,7 @@ class Reset extends Component {
                           <Input
                             prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                             type="password"
-                            placeholder="New password"
+                            placeholder={intl.formatMessage({id:'user.password.reset.newPassword'})}
                           />,
                         )}
                       </Form.Item>
@@ -137,7 +144,7 @@ class Reset extends Component {
                           rules: [
                             {
                               required: true,
-                              message: 'Please confirm your password'
+                              message: intl.formatMessage({id:'user.password.reset.confirmPasswordMessage'})
                             },
                             {
                               validator: this.compareToFirstPassword,
@@ -147,13 +154,13 @@ class Reset extends Component {
                           <Input
                             type="password"
                             onBlur={this.handleConfirmBlur}
-                            placeholder="Confirm your password"
+                            placeholder={intl.formatMessage({id:'user.password.reset.confirmPassword'})}
                           />,
                         )}
                       </Form.Item>
                       <div className="mb-2">
                         <Link to="/user/login" className="utils__link--blue utils__link--underlined">
-                          Back to login
+                          <FormattedMessage id="user.password.reset.back" />
                         </Link>
                       </div>
                       <div className="form-actions">
@@ -163,7 +170,7 @@ class Reset extends Component {
                           htmlType="submit"
                           loading={loading}
                         >
-                          Reset Password
+                          <FormattedMessage id="user.password.reset" />
                         </Button>
                       </div>
                     </Form>
@@ -175,12 +182,12 @@ class Reset extends Component {
                 <div className={styles.inner}>
                   <div>
                     <h4>
-                      <strong>Your password reset link is not valid</strong>
+                      <strong><FormattedMessage id="user.password.reset.invalidLink" /></strong>
                     </h4>
-                    <p className="mb-3">Please, see the below message to know what went wrong</p>
+                    <p className="mb-3"><FormattedMessage id="user.password.reset.invalidLinkMessage" /></p>
                     <p className="mb-3">{ message }</p>
                     <Link to="/user/login" className="btn">
-                      &larr; Sign in to continue
+                      &larr; <FormattedMessage id="user.password.reset.continue" />
                     </Link>
                   </div>
                 </div>
@@ -194,4 +201,4 @@ class Reset extends Component {
   }
 }
 
-export default Reset
+export default injectIntl(Reset)

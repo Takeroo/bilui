@@ -1,4 +1,5 @@
 import React from 'react';
+import { injectIntl } from 'react-intl'
 import { Helmet } from 'react-helmet'
 import ReactQuill from 'react-quill-2'
 import classNames from 'classnames'
@@ -63,7 +64,7 @@ class Editor extends React.Component {
     const { id } = this.state;
     if (id) {
       draftService.getDraftById(id).then(data => {
-        this.setState({ draft: data, initialTitle: data.title  });
+        this.setState({ draft: data, initialTitle: data.title, editorContent: data.body });
         this.setState({ changed: false  });
       });
     }
@@ -109,7 +110,7 @@ class Editor extends React.Component {
     const subtitle = this.getSubtitle(e);
     draft.body = e;
     draft.subtitle = subtitle;
-    this.setState({ draft, changed: true, syncStatus:'' });
+    this.setState({ draft, changed: true, syncStatus:'', editorContent: e });
   }
 
   handleTitleChange = (e) => {
@@ -121,24 +122,24 @@ class Editor extends React.Component {
   updateDraft = () => {
     const { changed, draft } = this.state;
     if (!changed) return;
-    this.setState({ changed: false, syncStatus:'Syncing..' });
+    this.setState({ changed: false, syncStatus:'syncing' });
 
     if (draft.title || draft.body) {
       draftService.saveDraft(draft).then(data => {
-        this.setState({ draft: data, syncStatus:'Saved' });
+        this.setState({ draft: data, syncStatus:'saved' });
       });
     }
   }
 
   render() {
-    const { id, draft, initialTitle, formStatus, syncStatus } = this.state;
-    const { body } = draft;
+    const { id, draft, initialTitle, editorContent, formStatus, syncStatus } = this.state;
     const {
       isBorderless,
       isSquaredBorders,
       isFixedWidth,
       isMenuShadow,
       isMenuTop,
+      intl
     } = this.props
 
     return (
@@ -168,22 +169,22 @@ class Editor extends React.Component {
                         <div className="card-body">
                           <div style={{textAlign:'center'}} className={styles.addPost}>
                             {id && (
-                              <h2 id='editor-title' contentEditable placeholder="Your title.." style={{ color: '#525f7f' }}>
+                              <h2 id='editor-title' contentEditable placeholder={intl.formatMessage({id: 'article.editor.title'})} style={{ color: '#525f7f' }}>
                                 {initialTitle}
                               </h2>
                             )}
                             {!id && (
-                              <h2 id='editor-title' contentEditable placeholder="Your title.." style={{ color: '#525f7f' }}>
+                              <h2 id='editor-title' contentEditable placeholder={intl.formatMessage({id: 'article.editor.title'})} style={{ color: '#525f7f' }}>
                                 {}
                               </h2>
                             )}
                             <ReactQuill
                               theme="bubble"
                               onChange={this.handleChange}
-                              value={body}
+                              value={editorContent || ''}
                               modules={modules}
                               formats={formats}
-                              placeholder='TELL YOUR STORY..'
+                              placeholder={intl.formatMessage({id: 'article.editor.placeholder'}).toUpperCase()}
                             />
                           </div>
                         </div>
@@ -241,4 +242,4 @@ const formats = [
   'video',
 ];
 
-export default Editor;
+export default injectIntl(Editor);

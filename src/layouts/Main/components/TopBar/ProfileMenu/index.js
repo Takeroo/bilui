@@ -29,21 +29,21 @@ class ProfileMenu extends React.Component {
         </Menu.Item>
         <Menu.Divider />
         <Menu.Item>
-          <a href="/author/profile">
+          <a href="/#/author/profile">
             <i className={`${styles.menuIcon} icmn-user`} />
-            Profile
+            <FormattedMessage id="topBar.profileMenu.profile" />
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a href="/article/edit">
+          <a href="/#/article/edit">
             <i className={`${styles.menuIcon} icmn-quill`} />
-            New story
+            <FormattedMessage id="topBar.profileMenu.newStory" />
           </a>
         </Menu.Item>
         <Menu.Item>
-          <a href="/author/drafts">
+          <a href="/#/author/drafts">
             <i className={`${styles.menuIcon} icmn-stack`} />
-            Drafts
+            <FormattedMessage id="topBar.profileMenu.drafts" />
           </a>
         </Menu.Item>
         <Menu.Divider />

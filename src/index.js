@@ -6,7 +6,7 @@ import thunk from 'redux-thunk'
 import { routerMiddleware } from 'connected-react-router'
 import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import { createBrowserHistory } from 'history'
+import { createHashHistory } from 'history'
 import reducers from 'redux/reducers'
 import sagas from 'redux/sagas'
 import Router from 'router'
@@ -20,7 +20,7 @@ import 'react-quill-2/dist/quill.core.css';
 import 'react-quill-2/dist/quill.snow.css';
 import 'react-quill-2/dist/quill.bubble.css';
 
-const history = createBrowserHistory()
+const history = createHashHistory()
 const sagaMiddleware = createSagaMiddleware()
 const routeMiddleware = routerMiddleware(history)
 const middlewares = [thunk, sagaMiddleware, routeMiddleware]

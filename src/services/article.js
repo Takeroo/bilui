@@ -4,7 +4,11 @@ export const articleService = {
   getArticles,
   getArticlesByUser,
   getArticleById,
-  publishDraft
+  publishDraft,
+  getSavedArticles,
+  saveArticle,
+  getClappedArticles,
+  clapArticle
 };
 
 function getArticles(page, size, title){
@@ -30,4 +34,20 @@ function getArticleById(articleId) {
 
 function publishDraft(draftToPublish){
   return request.post('/articles/publish', draftToPublish);
+}
+
+function getSavedArticles(){
+  return request.get(`/articles/saved`);
+}
+
+function saveArticle(id){
+  return request.post(`/articles/${id}/save`);
+}
+
+function getClappedArticles(){
+  return request.get(`/articles/clapped`);
+}
+
+function clapArticle(id){
+  return request.post(`/articles/${id}/clap`);
 }

@@ -1,4 +1,4 @@
-const host = 'http://18.156.171.137';
+const host = 'http://3.123.83.246';
 
 export const config = {
   apiUrl: `${host}/api`,

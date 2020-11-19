@@ -1,20 +1,9 @@
 import React from 'react'
+import { injectIntl } from 'react-intl'
 import { Upload, message } from 'antd';
 import {userService} from '../../../../../services/user'
 import {config} from '../../../../../config'
 import style from './style.module.scss'
-
-function beforeUpload(file) {
-  const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
-  if (!isJpgOrPng) {
-    message.error('You can only upload JPG/PNG file!');
-  }
-  const isLt2M = file.size / 1024 / 1024 < 2;
-  if (!isLt2M) {
-    message.error('Image must smaller than 2MB!');
-  }
-  return isJpgOrPng && isLt2M;
-}
 
 class Avatar extends React.Component {
 
@@ -23,6 +12,19 @@ class Avatar extends React.Component {
     this.state = {
       loading: false
     };
+  }
+
+  beforeUpload = (file) => {
+    const {intl} = this.props;
+    const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+    if (!isJpgOrPng) {
+      message.error(intl.formatMessage({id: 'author.profile.info.fileFormatError'}));
+    }
+    const isLt2M = file.size / 1024 / 1024 < 2;
+    if (!isLt2M) {
+      message.error(intl.formatMessage({id: 'author.profile.info.fileSizeError'}));
+    }
+    return isJpgOrPng && isLt2M;
   }
 
   handleUpload = file => {
@@ -54,7 +56,7 @@ class Avatar extends React.Component {
               name="avatar"
               className={style.avatarUploader}
               showUploadList={false}
-              beforeUpload={beforeUpload}
+              beforeUpload={this.beforeUpload}
               disabled={loading}
               multiple={false}
               customRequest={(e)=> this.handleUpload(e.file)}
@@ -70,4 +72,4 @@ class Avatar extends React.Component {
   }
 }
 
-export default Avatar
+export default injectIntl(Avatar)

@@ -60,7 +60,7 @@ export const routes = [
   // home
   {
     path: '/home',
-    component: loadable(() => import('pages/home/default')),
+    component: loadable(() => import('pages/home')),
     exact: true,
     layout: 'main'
   },

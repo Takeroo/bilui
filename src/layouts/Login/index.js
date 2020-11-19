@@ -1,4 +1,5 @@
 import React from 'react'
+import {FormattedMessage} from 'react-intl'
 import { Layout } from 'antd'
 import { Link, withRouter } from 'react-router-dom'
 import styles from './style.module.scss'
@@ -57,18 +58,18 @@ class LoginLayout extends React.PureComponent {
               <nav className={styles.navigation}>
                 <ul className={styles.navigationItems}>
                   <li>
-                    <a href="javascript: void(0);">&larr; Back</a>
+                    <a href="javascript: void(0);">&larr; <FormattedMessage id="topBar.back" /></a>
                   </li>
                   <li>
                     <a className={styles.navigationActive} href="javascript: void(0);">
-                      Login
+                      <FormattedMessage id="topBar.login" />
                     </a>
                   </li>
                   <li>
-                    <a href="javascript: void(0);">About</a>
+                    <a href="javascript: void(0);"><FormattedMessage id="topBar.about" /></a>
                   </li>
                   <li>
-                    <a href="javascript: void(0);">Support</a>
+                    <a href="javascript: void(0);"><FormattedMessage id="topBar.support" /></a>
                   </li>
                 </ul>
               </nav>
@@ -77,16 +78,16 @@ class LoginLayout extends React.PureComponent {
             <div className={`${styles.footer} text-center`}>
               <ul className="list-unstyled list-inline mb-3">
                 <li className="list-inline-item">
-                  <a href="javascript: void(0);">Terms of Use</a>
+                  <a href="javascript: void(0);"><FormattedMessage id="footer.termsOfUse" /></a>
                 </li>
                 <li className="list-inline-item">
-                  <a href="javascript: void(0);">Support</a>
+                  <a href="javascript: void(0);"><FormattedMessage id="footer.support" /></a>
                 </li>
                 <li className="list-inline-item">
-                  <a href="javascript: void(0);">Contacts</a>
+                  <a href="javascript: void(0);"><FormattedMessage id="footer.contacts" /></a>
                 </li>
               </ul>
-              <p>&copy; 2020 Bilerman. All rights reserved.</p>
+              <p>&copy; 2020 Bilerman. <FormattedMessage id="footer.allRightsReserved" /></p>
             </div>
           </div>
         </Layout.Content>

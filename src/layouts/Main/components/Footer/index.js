@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 import styles from './style.module.scss'
 
 const Footer = () => (
@@ -29,7 +30,7 @@ const Footer = () => (
                   Bilerman Software
                 </a>
                 <br />
-                All rights reserved
+                <FormattedMessage id="footer.allRightsReserved" />
               </span>
             </div>
           </div>

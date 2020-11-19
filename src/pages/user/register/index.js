@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Form, Input, Button, Checkbox, Icon, notification } from 'antd'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { authService } from '../../../services'
 import styles from './style.module.scss'
 
@@ -35,7 +36,8 @@ class Register extends Component {
   compareToFirstPassword = (rule, value, callback) => {
     const { form } = this.props
     if (value && value !== form.getFieldValue('password')) {
-      callback('Your password and confirmation does not match!')
+      const {intl} = this.props;
+      callback(intl.formatMessage({id: 'user.register.passwordConfirmMessage'}))
     } else {
       callback()
     }
@@ -60,7 +62,8 @@ class Register extends Component {
 
   checkAgreement = (rule, value, callback) => {
     if (!value) {
-      callback('Please, confirm your agreement')
+      const {intl} = this.props;
+      callback(intl.formatMessage({id: 'user.register.agreementMessage'}))
     } else {
       callback()
     }
@@ -74,11 +77,11 @@ class Register extends Component {
   }
 
   render() {
-    const { form } = this.props
+    const { form, intl } = this.props
     const { loading, user } = this.state
     return (
       <div>
-        <Helmet title="Register" />
+        <Helmet title={intl.formatMessage({id:'user.register'})} />
         <div className={styles.block}>
           <div className="row">
             <div className="col-xl-12">
@@ -86,19 +89,23 @@ class Register extends Component {
                 {user &&
                   <div>
                     <h4>
-                      <strong>Dear {user.name}, thank you for registration</strong>
+                      <strong>
+                        <FormattedMessage id="user.register.hi" />
+                        {user.name},
+                        <FormattedMessage id="user.register.thanks" />
+                      </strong>
                     </h4>
-                    <p className="mb-3">Confirmation email has been sent to {user.email}.</p>
-                    <p className="mb-3">Please, follow the instructions to activate your account.</p>
+                    <p className="mb-3"><FormattedMessage id="user.register.confirmationEmail" /> {user.email}.</p>
+                    <p className="mb-3"><FormattedMessage id="user.register.instructions" /></p>
                     <div className="mb-3">
                       <Button type="primary" ghost onClick={this.sendToken}>
-                        Resend
+                        <FormattedMessage id="user.register.resend" />
                       </Button>
                       {' '}
-                      confirmation if you did not receive email from us.
+                      <FormattedMessage id="user.register.resendMessage" />
                     </div>
                     <Link to="/user/login" className="btn">
-                      &larr; Sign in to continue
+                      &larr; <FormattedMessage id="user.register.continue" />
                     </Link>
                   </div>
                 }
@@ -106,33 +113,33 @@ class Register extends Component {
                 {!user &&
                   <div className={styles.form}>
                     <h4 className="text-uppercase">
-                      <strong>Create your account</strong>
+                      <strong><FormattedMessage id="user.register.header" /></strong>
                     </h4>
-                    <p>And start spending more time on your thoughts.</p>
+                    <p><FormattedMessage id="user.register.subtitle" /></p>
                     <br />
                     <Form layout="vertical" hideRequiredMark onSubmit={this.onSubmit}>
                       <Form.Item>
                         {form.getFieldDecorator('name', {
-                          rules: [{ required: true, message: 'Please input your name' }],
+                          rules: [{ required: true, message: intl.formatMessage({id:'user.register.nameMessage'}) }],
                         })(
-                          <Input placeholder="First name" />,
+                          <Input placeholder={intl.formatMessage({id:'user.register.name'})} />,
                         )}
                       </Form.Item>
                       <Form.Item>
                         {form.getFieldDecorator('surname', {
-                          rules: [{ required: true, message: 'Please input your last name' }],
+                          rules: [{ required: true, message: intl.formatMessage({id:'user.register.surnameMessage'}) }],
                         })(
-                          <Input placeholder="Last name" />,
+                          <Input placeholder={intl.formatMessage({id:'user.register.surname'})} />,
                         )}
                       </Form.Item>
                       <Form.Item>
                         {form.getFieldDecorator('email', {
-                          rules: [{ required: true, message: 'Please input your email address' }],
+                          rules: [{ required: true, message: intl.formatMessage({id:'user.register.emailMessage'}) }],
                         })(
                           <Input
                             prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                             type="email"
-                            placeholder="Email"
+                            placeholder={intl.formatMessage({id:'user.register.email'})}
                           />,
                         )}
                       </Form.Item>
@@ -141,7 +148,7 @@ class Register extends Component {
                           rules: [
                             {
                               required: true,
-                              message: 'Please input your password'
+                              message: intl.formatMessage({id:'user.register.passwordMessage'})
                             },
                             {
                               validator: this.validateToNextPassword,
@@ -151,7 +158,7 @@ class Register extends Component {
                           <Input
                             prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                             type="password"
-                            placeholder="Input your password"
+                            placeholder={intl.formatMessage({id:'user.register.password'})}
                           />,
                         )}
                       </Form.Item>
@@ -160,7 +167,7 @@ class Register extends Component {
                           rules: [
                             {
                               required: true,
-                              message: 'Please confirm your password'
+                              message: intl.formatMessage({id:'user.register.confirmMessage'})
                             },
                             {
                               validator: this.compareToFirstPassword,
@@ -170,7 +177,7 @@ class Register extends Component {
                           <Input
                             type="password"
                             onBlur={this.handleConfirmBlur}
-                            placeholder="Confirm your password"
+                            placeholder={intl.formatMessage({id:'user.register.confirm'})}
                           />,
                         )}
                       </Form.Item>
@@ -186,20 +193,7 @@ class Register extends Component {
                         })(
                           <Checkbox>
                             <span className="ml-3 register-link">
-                              I agree to the
-                              {' '}
-                              <a
-                                href="javascript: void(0);"
-                                className="text-primary utils__link--underlined"
-                              >
-                                Terms of Service
-                              </a> {' '} and {' '}
-                              <a
-                                href="javascript: void(0);"
-                                className="text-primary utils__link--underlined"
-                              >
-                                Privacy Policy
-                              </a>
+                              <FormattedMessage id="user.register.agreement" />
                             </span>
                           </Checkbox>
                         )}
@@ -211,16 +205,16 @@ class Register extends Component {
                           htmlType="submit"
                           loading={loading}
                         >
-                          Register
+                          <FormattedMessage id="user.register" />
                         </Button>
                         <span className="ml-3 register-link">
                           <a
-                            href="/user/login"
+                            href="/#/user/login"
                             className="text-primary utils__link--underlined"
                           >
-                            Sign in
+                            <FormattedMessage id="user.register.login" />
                           </a>{' '}
-                          if you have an account
+                          <FormattedMessage id="user.register.loginMessage" />
                         </span>
                       </div>
                     </Form>
@@ -235,4 +229,4 @@ class Register extends Component {
   }
 }
 
-export default Register
+export default injectIntl(Register)

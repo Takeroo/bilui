@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { Redirect } from 'react-router-dom'
 import { Button, Form, Icon, Input, Select, Upload } from 'antd'
 import { Scrollbars } from 'react-custom-scrollbars'
@@ -55,7 +56,7 @@ class PublishForm extends React.Component {
   }
 
   render() {
-    const { enabled, toggleForm, form } = this.props
+    const { enabled, toggleForm, form, intl } = this.props
     const { tags, title, subtitle, imageId, loading, published, article } = this.state;
 
     if (published) {
@@ -76,7 +77,7 @@ class PublishForm extends React.Component {
         <Scrollbars style={{ height: '100vh' }}>
           <div className={styles.container}>
             <div className={styles.title}>
-              Publish your draft
+              <FormattedMessage id='article.editor.form.header' />
               <button
                 className={`${styles.close} fa fa-times`}
                 onClick={() => toggleForm()}
@@ -84,7 +85,7 @@ class PublishForm extends React.Component {
               />
             </div>
             <div className={styles.description}>
-              <strong>Your article preview</strong>
+              <strong><FormattedMessage id='article.editor.form.preview' /></strong>
             </div>
             <Form layout="vertical" hideRequiredMark onSubmit={this.onSubmit}>
               <div className="form-group">
@@ -112,12 +113,8 @@ class PublishForm extends React.Component {
                         <p className="ant-upload-drag-icon">
                           <Icon type="camera" />
                         </p>
-                        <p className="ant-upload-text">
-                          Pick or drag your preview image
-                        </p>
-                        <p className="ant-upload-hint">
-                          Include a high-quality image in your story to make it more inviting to readers
-                        </p>
+                        <p className="ant-upload-text"><FormattedMessage id='article.editor.form.imagePick' /></p>
+                        <p className="ant-upload-hint"><FormattedMessage id='article.editor.form.imagePickMessage' /></p>
                       </Upload.Dragger>,
                     )}
                   </Form.Item>
@@ -127,29 +124,28 @@ class PublishForm extends React.Component {
                 <Form.Item>
                   {form.getFieldDecorator('title', {
                     initialValue: title,
-                    rules: [{ required: true, message: 'Write your title' }],
+                    rules: [{ required: true, message: intl.formatMessage({id: 'article.editor.form.titleMessage'}) }],
                   })(
-                    <Input placeholder="Title" />,
+                    <Input placeholder={intl.formatMessage({id: 'article.editor.form.title'})} />,
                   )}
                 </Form.Item>
 
                 <Form.Item>
                   {form.getFieldDecorator('subtitle', {
                     initialValue: subtitle,
-                    rules: [{ required: true, message: 'Write your subtitle' }],
+                    rules: [{ required: true, message: intl.formatMessage({id: 'article.editor.form.subtitleMessage'}) }],
                   }, tags)(
-                    <Input placeholder="Subtitle" />,
+                    <Input placeholder={intl.formatMessage({id: 'article.editor.form.subtitle'})} />,
                   )}
                 </Form.Item>
               </div>
 
               <div className={styles.description}>
-                <strong>Note:</strong> Changes here will affect how your story appears in public places like Medium’s homepage — not the story itself.
+                <strong><FormattedMessage id='article.editor.form.note' />:</strong>
+                <FormattedMessage id='article.editor.form.noteMessage' />
               </div>
               <hr />
-              <div className={styles.description}>
-                Add or change tags (up to 5) so readers know what your story is about
-              </div>
+              <div className={styles.description}><FormattedMessage id='article.editor.form.tagDescription' /></div>
 
               <div className="form-group">
                 <Form.Item>
@@ -160,7 +156,7 @@ class PublishForm extends React.Component {
                         validator: (rule, value, callback) => {
                           if (value) {
                             if (value.length > 5) {
-                              callback("No more than 5 tags");
+                              callback(intl.formatMessage({id: 'article.editor.form.tagMessage'}));
                             } else if (value.length <= 5) {
                               callback();
                             }
@@ -172,7 +168,7 @@ class PublishForm extends React.Component {
                     <Select
                       mode="tags"
                       size="default"
-                      placeholder="Add a tag..."
+                      placeholder={intl.formatMessage({id: 'article.editor.form.tag'})}
                       style={{ width: '100%' }}
                     />,
                   )}
@@ -185,7 +181,7 @@ class PublishForm extends React.Component {
                   htmlType="submit"
                   loading={loading}
                 >
-                  Publish
+                  <FormattedMessage id='article.editor.form.publish' />
                 </Button>
               </div>
             </Form>
@@ -196,4 +192,4 @@ class PublishForm extends React.Component {
   }
 }
 
-export default PublishForm;
+export default injectIntl(PublishForm);
