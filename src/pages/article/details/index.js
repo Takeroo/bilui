@@ -2,7 +2,8 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import moment from 'moment'
-import Avatar from 'components/CleanUIComponents/Avatar'
+import Avatar from 'components/BilermanComponents/Avatar'
+import Comments from './comments'
 import NotFoundPage from '../../404'
 import { articleService } from '../../../services'
 import { config } from '../../../config'
@@ -67,8 +68,7 @@ class BlogPost extends React.Component {
                   </div>
                   <div className="clearfix">
                     <div className={`${styles.commentAvatar} mr-2`}>
-                      {author.avatar && <Avatar size="50" src={`${config.apiUrl}/users/${author.id}/avatar`} border={false} href={`/author/profile?id=${author.id}`} />}
-                      {!author.avatar && <Avatar size="50" src="/resources/images/avatar.jpg" border={false} href={`/author/profile?id=${author.id}`} />}
+                      <Avatar author={author} size="50" border={false} />
                     </div>
                     <div className="pull-left">
                       <a href={`/#/author/profile?id=${author.id}`}><strong>{`${author.name} ${author.surname}`}</strong></a>
@@ -145,7 +145,7 @@ class BlogPost extends React.Component {
 
                   <div className={`${styles.authorCard} clearfix`}>
                     <div className={styles.authorPhoto}>
-                      <Avatar src={`${config.apiUrl}/users/${author.id}/avatar`} size="110" href={`/author/profile?id=${author.id}`} />
+                      <Avatar author={author} size="110" />
                     </div>
                     <div className={styles.authorInf}>
                       <a href={`/#/author/profile?id=${author.id}`}>
@@ -154,6 +154,8 @@ class BlogPost extends React.Component {
                       <p className={styles.authorWords}>&ldquo;{author.bio}&rdquo;</p>
                     </div>
                   </div>
+
+                  { article && article.id && <Comments article={article} /> }
                 </div>
               </div>
             </section>

@@ -47,7 +47,7 @@ class Avatar extends React.Component {
           borderColor,
         }}
       >
-        {user.avatar && <img className={style.avatarImage} src={`${config.apiUrl}/users/${user.id}/avatar?av=${user.avatar}`} alt="User" /> }
+        {user.avatar && <img className={style.avatarImage} src={`${config.apiUrl}/users/${user.id}/avatar?av=${user.avatar}`} alt="User" onError={(e)=>{e.target.onerror = null; e.target.src="/resources/images/avatar.jpg"}} /> }
         {!user.avatar && <img className={style.avatarImage} src="/resources/images/avatar.jpg" alt="User" /> }
 
         {enabled &&
