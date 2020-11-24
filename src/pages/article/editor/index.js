@@ -163,7 +163,7 @@ class Editor extends React.Component {
               <div>
                 <Helmet title="Add Blog Post" />
                 <div className={styles.block}>
-                  <section>
+                  <section className="bil-editor">
                     <div className="row">
                       <div className="col-lg-12">
                         <div className="card-body">

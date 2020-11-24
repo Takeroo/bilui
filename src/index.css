@@ -8,3 +8,34 @@
 [contenteditable]:focus {
   outline: 0px solid transparent;
 }
+
+.ql-video {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 100px;
+}
+
+@media screen and (min-width: 400px) {
+  .ql-video {
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .ql-video {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .ql-video {
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .ql-video {
+    height: 500px;
+  }
+}
