@@ -1,13 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button } from 'antd'
+import { Button, message } from 'antd'
 // import style from './style.module.scss'
 
 
 @connect(({ clap }) => ({ clap }))
 class Clap extends React.Component {
-  static defaultProps = {
-    articleId: null
+
+  state  = {
+    clapCount: this.props.article.claps
   }
 
   clap = (id) => {
@@ -16,19 +17,36 @@ class Clap extends React.Component {
       dispatch({
         type: 'clap/CLAP_ARTICLE',
         payload: { articleId: id},
+        callback: this.updateClaps
       })
     }
   }
 
+  updateClaps = () => {
+    this.setState((prevState) => ({clapCount: prevState.clapCount + 1}));
+    message.success({
+      content: '+ 1',
+      icon: <i className="fa fa-thumbs-up mr-1" />,
+      duration: 0.1
+    });
+  }
+
   render() {
-    const { articleId, clap} = this.props
+    const { article, clap} = this.props
+    const { clapCount } = this.state
     const { clappedArticleIds } = clap;
-    return (
-      <Button type="link" onClick={() => this.clap(articleId)} shape="circle">
-        { clappedArticleIds.includes(articleId) && <i className="fa fa-thumbs-up font-size-24" />}
-        { !clappedArticleIds.includes(articleId) && <i className="fa fa-thumbs-o-up font-size-24" />}
-      </Button>
-    )
+
+    if( article && article.id)
+      return (
+        <>
+          <Button type="link" onClick={() => this.clap(article.id)} shape="circle">
+            { clappedArticleIds.includes(article.id) && <i className="fa fa-thumbs-up font-size-24" />}
+            { !clappedArticleIds.includes(article.id) && <i className="fa fa-thumbs-o-up font-size-24" />}
+          </Button>
+          {clapCount}
+        </>
+      )
+    return (<></>)
   }
 }
 

@@ -39,7 +39,7 @@ class Feed extends React.Component {
         </div>
 
         {articles.map(article => (
-          <Post article={article} author={article.user} />
+          <Post article={article} author={article.user} key={`article_${article.id}`} />
         ))}
 
         <div className="row">

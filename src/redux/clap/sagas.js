@@ -2,7 +2,7 @@ import { all, takeEvery, put, call } from 'redux-saga/effects'
 import { articleService } from '../../services'
 import actions from './actions'
 
-export function* CLAP_ARTICLE({ payload }) {
+export function* CLAP_ARTICLE({ payload, callback }) {
   const { articleId } = payload
   yield put({
     type: 'clap/SET_STATE',
@@ -10,8 +10,8 @@ export function* CLAP_ARTICLE({ payload }) {
       loading: true,
     },
   })
-  const response = yield call(articleService.clapArticle, articleId)
-  if (response) {
+  try {
+    const response = yield call(articleService.clapArticle, articleId)
     yield put({
       type: 'clap/SET_STATE',
       payload: {
@@ -19,9 +19,11 @@ export function* CLAP_ARTICLE({ payload }) {
         loading: false,
       },
     })
+    yield callback()
   }
-  else{
+  catch(e) {
     yield put({
+      type: 'clap/SET_STATE',
       payload: {
         loading: false,
       }

@@ -49,13 +49,13 @@ class BlogPost extends React.Component {
                     <div className={styles.information}>
                       <div className={styles.title}>
                         <h1>
-                          <a href="javascript: void(0);">{articleData.name}</a>
+                          <a href="#">{articleData.name}</a>
                         </h1>
                       </div>
                       <ul className={styles.meta}>
                         <li className={styles.metaInf}>
                           <span className={styles.articleAuthor}>
-                            Post By <a href="javascript: void(0);">{articleData.author}</a>
+                            Post By <a href="#">{articleData.author}</a>
                           </span>
                         </li>
                         <li className={styles.metaInf}>
@@ -72,7 +72,7 @@ class BlogPost extends React.Component {
                         <div className="col-8">
                           <div className={styles.hashtags}>
                             {articleData.tags.map(tag => (
-                              <a href="javascript: void(0);" key={tag}>
+                              <a href="#" key={tag}>
                                 {tag}
                               </a>
                             ))}
@@ -81,17 +81,17 @@ class BlogPost extends React.Component {
                         <div className="col-4">
                           <ul className={styles.share}>
                             <li className={styles.shareItem}>
-                              <a href="javascript: void(0);">
+                              <a href="#">
                                 <i className="fa fa-facebook" />
                               </a>
                             </li>
                             <li className={styles.shareItem}>
-                              <a href="javascript: void(0);">
+                              <a href="#">
                                 <i className="fa fa-twitter" />
                               </a>
                             </li>
                             <li className={styles.shareItem}>
-                              <a href="javascript: void(0);">
+                              <a href="#">
                                 <i className="fa fa-pinterest-p" />
                               </a>
                             </li>
@@ -109,7 +109,7 @@ class BlogPost extends React.Component {
                       <p className={styles.authorWords}>&ldquo;{articleData.authorStatus}&rdquo;</p>
                       <div className="blog-feed__author-profile">
                         <a
-                          href="javascript: void(0);"
+                          href="#"
                           className="blog-feed__author-profile-btn btn btn-sm btn-primary"
                         >
                           View Profile
@@ -147,7 +147,7 @@ class BlogPost extends React.Component {
                                   </div>
                                   <div className="pull-right">
                                     <Dropdown overlay={actions}>
-                                      <a className="ant-dropdown-link" href="javascript: void(0);">
+                                      <a className="ant-dropdown-link" href="#">
                                         Actions <Icon type="down" />
                                       </a>
                                     </Dropdown>
@@ -155,7 +155,7 @@ class BlogPost extends React.Component {
                                 </div>
                                 <div dangerouslySetInnerHTML={{ __html: postComment.content }} />
                                 <div>
-                                  <a href="javascript: void(0);" className="mr-3">
+                                  <a href="#" className="mr-3">
                                     <i className="icmn-heart mr-2" />
                                     {postComment.likesCount > 0 && (
                                       <span>{`${postComment.likesCount} Likes`}</span>
@@ -164,7 +164,7 @@ class BlogPost extends React.Component {
                                       <span>{`${postComment.likesCount} Like`}</span>
                                     )}
                                   </a>
-                                  <a href="javascript: void(0);" className="mr-3">
+                                  <a href="#" className="mr-3">
                                     <i className="icmn-bubble mr-2" />
                                     {postComment.commentsCount > 0 && (
                                       <span>{`${postComment.commentsCount} Comments`}</span>
@@ -173,7 +173,7 @@ class BlogPost extends React.Component {
                                       <span>{`${postComment.commentsCount} Comment`}</span>
                                     )}
                                   </a>
-                                  <a href="javascript: void(0);">
+                                  <a href="#">
                                     <i className="icmn-reply mr-2" />
                                     <span>Reply</span>
                                   </a>
@@ -205,7 +205,7 @@ class BlogPost extends React.Component {
                                               <Dropdown overlay={actions}>
                                                 <a
                                                   className="ant-dropdown-link"
-                                                  href="javascript: void(0);"
+                                                  href="#"
                                                 >
                                                   Actions <Icon type="down" />
                                                 </a>
@@ -216,7 +216,7 @@ class BlogPost extends React.Component {
                                             dangerouslySetInnerHTML={{ __html: subComment.content }}
                                           />
                                           <div>
-                                            <a href="javascript: void(0);" className="mr-3">
+                                            <a href="#" className="mr-3">
                                               <i className="icmn-heart mr-2" />
                                               {subComment.likesCount > 0 && (
                                                 <span>{`${subComment.likesCount} Likes`}</span>
@@ -225,7 +225,7 @@ class BlogPost extends React.Component {
                                                 <span>{`${subComment.likesCount} Like`}</span>
                                               )}
                                             </a>
-                                            <a href="javascript: void(0);" className="mr-3">
+                                            <a href="#" className="mr-3">
                                               <i className="icmn-bubble mr-2" />
                                               {subComment.commentsCount > 0 && (
                                                 <span>
@@ -236,7 +236,7 @@ class BlogPost extends React.Component {
                                                 <span>{`${subComment.commentsCount} Comment`}</span>
                                               )}
                                             </a>
-                                            <a href="javascript: void(0);">
+                                            <a href="#">
                                               <i className="icmn-reply mr-2" />
                                               <span>Reply</span>
                                             </a>
@@ -252,7 +252,7 @@ class BlogPost extends React.Component {
                         </div>
                       )}
                       <div className="mb-5 pb-2">
-                        <a href="javascript: void(0);" className="btn btn-default btn-block mb-5">
+                        <a href="#" className="btn btn-default btn-block mb-5">
                           Load More
                         </a>
                       </div>
@@ -283,7 +283,7 @@ class BlogPost extends React.Component {
                       <ul className={styles.categoriesList}>
                         {articlesCategories.map(category => (
                           <li className={styles.categoriesItem} key={category}>
-                            <a className={styles.categoriesLink} href="javascript: void(0);">
+                            <a className={styles.categoriesLink} href="#">
                               {category}
                             </a>
                           </li>
@@ -297,20 +297,20 @@ class BlogPost extends React.Component {
                       {latesArticlesData.map(latestArticle => (
                         <article className={styles.latestPost} key={Math.random()}>
                           <div className={styles.latestImg}>
-                            <a href="javascript: void(0);">
+                            <a href="#">
                               <img src={latestArticle.cover} alt={latestArticle.name} />
                             </a>
                           </div>
                           <div className={styles.latestData}>
                             <div className={styles.latestName}>
                               <h2>
-                                <a href="javascript: void(0);">{latestArticle.name}</a>
+                                <a href="#">{latestArticle.name}</a>
                               </h2>
                             </div>
                             <ul className={`${styles.latestArticleMeta} ${styles.meta}`}>
                               <li className={styles.metaInf}>
                                 <span className={styles.articleAuthor}>
-                                  Post By <a href="javascript: void(0);">{latestArticle.author}</a>
+                                  Post By <a href="#">{latestArticle.author}</a>
                                 </span>
                               </li>
                               <li className={styles.metaInf}>

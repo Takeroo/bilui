@@ -2,11 +2,11 @@ import React from 'react'
 import { FormattedMessage } from 'react-intl'
 import moment from 'moment'
 import { Button } from 'antd'
-import Avatar from 'components/CleanUIComponents/Avatar'
-import Bookmark from '../../../../components/BilermanComponents/Bookmark'
+import Avatar from 'components/BilermanComponents/Avatar'
+import Bookmark from 'components/BilermanComponents/Bookmark'
+import Clap from 'components/BilermanComponents/Clap'
 import styles from './style.module.scss'
 import { config } from '../../../../config'
-import Clap from '../../../../components/BilermanComponents/Clap'
 
 class Post extends React.Component {
 
@@ -18,8 +18,7 @@ class Post extends React.Component {
           <div className="clearfix">
             <div className="pull-left mr-2">
               <div className={`${styles.commentAvatar}`}>
-                {author.avatar && <Avatar size="50" src={`${config.apiUrl}/users/${author.id}/avatar`} border={false} href={`/#/author/profile?id=${author.id}`} />}
-                {!author.avatar && <Avatar size="50" src="/resources/images/avatar.jpg" border={false} href={`/#/author/profile?id=${author.id}`} />}
+                <Avatar size="50" author={author} />
               </div>
             </div>
             <div className="pull-left">
@@ -67,7 +66,7 @@ class Post extends React.Component {
                     </div>
                     <div className="row">
                       <div className="col-6">
-                        <Clap articleId={article.id} />
+                        <Clap article={article} />
                       </div>
                       <div className="col-6">
                         <ul className={styles.share}>

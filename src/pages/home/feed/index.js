@@ -28,7 +28,6 @@ class Feed extends React.Component {
     const { articles, page } = this.state
     return (
       <div>
-
         <div className="row">
           <div className="col-lg-12">
             <div className="utils__title mb-3">
@@ -38,7 +37,7 @@ class Feed extends React.Component {
         </div>
 
         {articles.map(article => (
-          <Post article={article} author={article.user} />
+          <Post article={article} author={article.user} key={`article_${article.id}`} />
         ))}
 
         <div className="row">

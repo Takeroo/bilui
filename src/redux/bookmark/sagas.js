@@ -2,7 +2,7 @@ import { all, takeEvery, put, call } from 'redux-saga/effects'
 import { articleService } from '../../services'
 import actions from './actions'
 
-export function* BOOKMARK_ARTICLE({ payload }) {
+export function* BOOKMARK_ARTICLE({ payload, callback }) {
   const { articleId } = payload
   yield put({
     type: 'bookmark/SET_STATE',
@@ -10,8 +10,9 @@ export function* BOOKMARK_ARTICLE({ payload }) {
       loading: true,
     },
   })
-  const response = yield call(articleService.saveArticle, articleId)
-  if (response) {
+
+  try {
+    const response = yield call(articleService.saveArticle, articleId)
     yield put({
       type: 'bookmark/SET_STATE',
       payload: {
@@ -19,9 +20,11 @@ export function* BOOKMARK_ARTICLE({ payload }) {
         loading: false,
       },
     })
+    yield callback()
   }
-  else{
+  catch(e) {
     yield put({
+      type: 'bookmark/SET_STATE',
       payload: {
         loading: false,
       }

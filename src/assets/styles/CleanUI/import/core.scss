@@ -4,10 +4,10 @@
 /*  CORE MODULE STYLES */
 
 html {
-  font-size: 13px;
+  font-size: 15px;
   overflow-y: scroll;
   @media (max-width: $sm-max-width) {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
@@ -17,7 +17,7 @@ body {
   background: $gray-lighten-more;
   line-height: 1.7;
   @media (max-width: $sm-max-width) {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 

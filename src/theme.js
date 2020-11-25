@@ -3,8 +3,8 @@
 // ref: https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
 module.exports = {
   '@body-background': '#f2f4f8',
-  '@font-size-base': '13px',
-  '@font-size-lg': '15px',
+  '@font-size-base': '15px',
+  '@font-size-lg': '18px',
 
   '@font-family': 'Nunito Sans, sans-serif',
   '@code-family': 'Nunito Sans, sans-serif',

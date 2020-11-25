@@ -53,7 +53,7 @@ class Replies extends React.Component {
   updateReply = (reply) => {
     return commentService.saveReply(reply).then(result => {
       const { replies } = this.state
-      const index = replies.findIndex(function(c) {return c.id === result.id;});
+      const index = replies.findIndex(function f(c) {return c.id === result.id;});
       replies[index] = {...replies[index], message: result.message, updatedAt: result.updatedAt}
       this.setState({ replies });
     });

@@ -54,7 +54,7 @@ class Comments extends React.Component {
   updateComment = (comment) => {
     return commentService.saveComment(comment).then(result => {
       const { comments } = this.state
-      const index = comments.findIndex(function(c) {return c.id === result.id;});
+      const index = comments.findIndex(function f(c) {return c.id === result.id;});
       comments[index] = {...comments[index], message: result.message, updatedAt: result.updatedAt}
       this.setState({ comments });
     });

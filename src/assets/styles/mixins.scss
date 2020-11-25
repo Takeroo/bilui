@@ -38,7 +38,7 @@ $danger: #fb434a;
 $base__font-family: 'Nunito Sans', sans-serif !important;
 
 // Font Size
-$base__font-size: 13 !default;
+$base__font-size: 15 !default;
 
 // Convert value rem() sass mixin
 @function rem($px, $base: $base__font-size) {
