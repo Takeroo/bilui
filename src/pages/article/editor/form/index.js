@@ -14,14 +14,14 @@ class PublishForm extends React.Component {
     loading: false,
     tags:[],
     title: '',
-    subtitle: ''
+    subtitle: '',
   }
 
   componentWillReceiveProps() {
     const {draft} = this.props;
     if(draft.published){
       const { article } = draft;
-      this.setState({draftId: draft.id, title: article.title, subtitle: article.subtitle, imageId: draft.imageId, tags:article.tags.map(tag => tag.name)});
+      this.setState({draftId: draft.id, title: article.title, subtitle: article.subtitle, imageId: draft.imageId, languageId: article.languageId, tags:article.tags.map(tag => tag.name)});
     }
     else{
       this.setState({draftId: draft.id, title: draft.title, subtitle: draft.subtitle, imageId: draft.imageId});
@@ -57,7 +57,7 @@ class PublishForm extends React.Component {
 
   render() {
     const { enabled, toggleForm, form, intl } = this.props
-    const { tags, title, subtitle, imageId, loading, published, article } = this.state;
+    const { tags, title, subtitle, imageId, languageId, loading, published, article } = this.state;
 
     if (published) {
       return (
@@ -171,6 +171,37 @@ class PublishForm extends React.Component {
                       placeholder={intl.formatMessage({id: 'article.editor.form.tag'})}
                       style={{ width: '100%' }}
                     />,
+                  )}
+                </Form.Item>
+                <Form.Item>
+                  {form.getFieldDecorator('languageId', {
+                    initialValue: languageId
+                  })(
+                    <Select
+                      allowClear
+                      size="default"
+                      placeholder={intl.formatMessage({id: 'article.editor.form.language'})}
+                      style={{ width: '100%' }}
+                    >
+                      <Select.Option value={1}>
+                        <span role="img" aria-label="Кыргызча" className="mr-2">
+                          🇰🇬
+                        </span>
+                        Кыргызча
+                      </Select.Option>
+                      <Select.Option value={2}>
+                        <span role="img" aria-label="Кыргызча" className="mr-2">
+                          🇷🇺
+                        </span>
+                        Русский
+                      </Select.Option>
+                      <Select.Option value={3}>
+                        <span role="img" aria-label="English" className="mr-2">
+                          🇬🇧
+                        </span>
+                        English
+                      </Select.Option>
+                    </Select>
                   )}
                 </Form.Item>
               </div>

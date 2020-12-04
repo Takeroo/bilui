@@ -22,7 +22,7 @@ const initialState = {
     isSquaredBorders: false,
     isFixedWidth: false,
     isMenuShadow: true,
-    locale: 'en-US',
+    locale: 'ky-KG',
   }),
 }
 

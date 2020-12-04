@@ -10,10 +10,12 @@ const messages = {
   'topBar.back': 'Назад',
   'topBar.about': 'О нас',
   'topBar.support': 'Поддержка',
+  'topBar.typeToSearch': 'Поиск',
   'topBar.profileMenu.hello': 'Привет',
   'topBar.profileMenu.profile': 'Профиль',
   'topBar.profileMenu.newStory': 'Новый рассказ',
   'topBar.profileMenu.drafts': 'Наброски',
+  'topBar.profileMenu.readingList': 'Список чтения',
   'topBar.profileMenu.logout': 'Выйти',
 
   'footer.termsOfUse': 'Условия использования',
@@ -120,6 +122,10 @@ const messages = {
   'author.drafts.edit': 'Редактировать',
   'author.drafts.delete': 'Удалить',
 
+  'author.readingList': 'Список чтения',
+  'author.readingList.bookmarks': 'Закладки',
+  'author.readingList.clapped': 'Понравившиеся',
+
   'article.editor.title': 'Ваш заголовок',
   'article.editor.placeholder': 'Расскажите свою историю',
   'article.editor.form.header': 'Опубликовать черновик',
@@ -135,6 +141,7 @@ const messages = {
   'article.editor.form.tag': 'Добавить тег',
   'article.editor.form.tagDescription': 'Добавить или изменить теги (до 5), чтобы читатели знали, о чем ваша история',
   'article.editor.form.tagMessage': 'Не более 5 тегов',
+  'article.editor.form.language': 'Язык публикации',
   'article.editor.form.publish': 'Опубликовать',
 
 }

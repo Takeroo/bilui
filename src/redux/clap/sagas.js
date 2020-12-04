@@ -40,7 +40,7 @@ export function* LOAD_CLAPS() {
   })
 
   try {
-    const response = yield call(articleService.getClappedArticles)
+    const response = yield call(articleService.getClappedArticleIds)
     if (response) {
       yield put({
         type: 'clap/SET_STATE',

@@ -10,10 +10,12 @@ const messages = {
   'topBar.back': 'Back',
   'topBar.about': 'About',
   'topBar.support': 'Support',
+  'topBar.typeToSearch': 'Type to search',
   'topBar.profileMenu.hello': 'Hello',
   'topBar.profileMenu.profile': 'Profile',
   'topBar.profileMenu.newStory': 'New Story',
   'topBar.profileMenu.drafts': 'Drafts',
+  'topBar.profileMenu.readingList': 'Reading List',
   'topBar.profileMenu.logout': 'Logout',
 
   'footer.termsOfUse': 'Terms of use',
@@ -120,6 +122,10 @@ const messages = {
   'author.drafts.edit': 'Edit',
   'author.drafts.delete': 'Delete',
 
+  'author.readingList': 'Reading List',
+  'author.readingList.bookmarks': 'Bookmarks',
+  'author.readingList.clapped': 'Liked',
+
   'article.editor.title': 'Your title',
   'article.editor.placeholder': 'Tell your story',
   'article.editor.form.header': 'Publish your draft',
@@ -135,6 +141,7 @@ const messages = {
   'article.editor.form.tag': 'Add a tag',
   'article.editor.form.tagDescription': 'Add or change tags (up to 5) so readers know what your story is about',
   'article.editor.form.tagMessage': 'No more than 5 tags',
+  'article.editor.form.language': 'Article language',
   'article.editor.form.publish': 'Publish',
 
 }

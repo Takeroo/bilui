@@ -65,6 +65,14 @@ export const routes = [
     layout: 'main'
   },
 
+  // tag
+  {
+    path: '/tag',
+    component: loadable(() => import('pages/tag')),
+    exact: true,
+    layout: 'main'
+  },
+
   // author
   {
     path: '/author/profile',
@@ -75,6 +83,13 @@ export const routes = [
   {
     path: '/author/drafts',
     component: loadable(() => import('pages/author/drafts')),
+    exact: true,
+    layout: 'main',
+    private: true
+  },
+  {
+    path: '/author/reading-list',
+    component: loadable(() => import('pages/author/readingList')),
     exact: true,
     layout: 'main',
     private: true

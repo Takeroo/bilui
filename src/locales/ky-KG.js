@@ -9,10 +9,12 @@ const messages = {
   'topBar.back': 'Артка баруу',
   'topBar.about': 'Биз жонундо',
   'topBar.support': 'Колдоо',
+  'topBar.typeToSearch': 'Издоо',
   'topBar.profileMenu.hello': 'Салам',
   'topBar.profileMenu.profile': 'Профиль',
   'topBar.profileMenu.newStory': 'Жаны ангеме',
   'topBar.profileMenu.drafts': 'Черновик',
+  'topBar.profileMenu.readingList': 'Окуу тизмеси',
   'topBar.profileMenu.logout': 'Чыгуу',
 
   'footer.termsOfUse': 'Колдонуу эрежелери',
@@ -119,6 +121,10 @@ const messages = {
   'author.drafts.edit': 'Редакциялоо',
   'author.drafts.delete': 'Очуруу',
 
+  'author.readingList': 'Окуу тизмеси',
+  'author.readingList.bookmarks': 'Кыстармалар',
+  'author.readingList.clapped': 'Жактырылгандар',
+
   'article.editor.title': 'Макаланын аталышы',
   'article.editor.placeholder': 'Макаланы жазыныз',
   'article.editor.form.header': 'Макаланы жарыяла',
@@ -133,7 +139,8 @@ const messages = {
   'article.editor.form.noteMessage': 'Озгортуулор сиздин ангемениздин Билерман баракчачынын башкы бетиндеги корунушун озгортот , бирок бул жердеги корунушун эмес',
   'article.editor.form.tag': 'Тэг кошуу',
   'article.editor.form.tagDescription': 'Окурмандар сиздин макаланызды кененирээк тушунуу учун тэг кошунуз же алмаштырыныз( 5 тэгке чеин)',
-  'article.editor.form.tagMessage': '5тэгке чейин',
+  'article.editor.form.tagMessage': '5 тэгке чейин',
+  'article.editor.form.language': 'Макаланын тили',
   'article.editor.form.publish': 'Макаланы жарыяла',
 
 }

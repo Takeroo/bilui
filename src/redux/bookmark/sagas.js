@@ -41,7 +41,7 @@ export function* LOAD_BOOKMARKS() {
   })
 
   try {
-    const response = yield call(articleService.getSavedArticles)
+    const response = yield call(articleService.getSavedArticleIds)
     if (response) {
       yield put({
         type: 'bookmark/SET_STATE',

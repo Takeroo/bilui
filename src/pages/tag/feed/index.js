@@ -1,22 +1,21 @@
 import React from 'react'
 import { Pagination } from 'antd'
-import { FormattedMessage } from 'react-intl'
 import Post from './post'
-import { articleService } from '../../../../services'
+import { articleService } from '../../../services'
 
 class Feed extends React.Component {
 
   state = {
-    articles:[],
+    articles: false
   };
 
   componentDidMount() {
     this.loadArticles();
   }
 
-  loadArticles = (pageNumber, size, title) =>{
-    const { author } = this.props
-    articleService.getArticlesByUser(author.id, pageNumber, size, title).then(page => {
+  loadArticles = (pageNumber, size) =>{
+    const { tagName } = this.props;
+    articleService.getArticlesByTagName(tagName, pageNumber, size).then(page => {
       this.setState({articles: page.content, page});
     })
   }
@@ -29,18 +28,11 @@ class Feed extends React.Component {
     const { articles, page } = this.state
     return (
       <div>
-
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="utils__title mb-3">
-              <strong><FormattedMessage id="author.profile.feed.latestPosts" /></strong>
-            </div>
-          </div>
-        </div>
-
-        {articles.map(article => (
+        {articles && articles.length > 0 && articles.map(article => (
           <Post article={article} author={article.user} key={`article_${article.id}`} />
         ))}
+
+        {articles && articles.length === 0 && <h5 className="mb-3 text-black"> No related articles </h5>}
 
         <div className="row">
           <div className="col-lg-12">

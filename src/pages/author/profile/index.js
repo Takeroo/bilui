@@ -9,7 +9,6 @@ import NotFoundPage from '../../404'
 import { userService } from '../../../services/user'
 import styles from './style.module.scss'
 
-
 @connect(({ user }) => ({ user }))
 class Profile extends React.Component {
 

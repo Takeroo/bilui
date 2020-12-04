@@ -46,6 +46,12 @@ class ProfileMenu extends React.Component {
             <FormattedMessage id="topBar.profileMenu.drafts" />
           </a>
         </Menu.Item>
+        <Menu.Item>
+          <a href="/#/author/reading-list">
+            <i className={`${styles.menuIcon} icmn-bookmarks`} />
+            <FormattedMessage id="topBar.profileMenu.readingList" />
+          </a>
+        </Menu.Item>
         <Menu.Divider />
         <Menu.Item>
           <a href="javascript: void(0);" onClick={this.logout}>
