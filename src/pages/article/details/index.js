@@ -101,7 +101,7 @@ class BlogPost extends React.Component {
                           <div className="col-12 mb-3">
                             <div className={styles.hashtags}>
                               {article.tags && article.tags.map(tag => (
-                                <a href="javascript: void(0);" key={tag.id}>
+                                <a href={`/#/tag?name=${tag.name}`} key={tag.id}>
                                   {tag.name}
                                 </a>
                               ))}

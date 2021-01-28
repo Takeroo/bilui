@@ -24,6 +24,16 @@ class TopBar extends React.Component {
           <LiveSearch />
         </div>
         <div className="mr-4">
+          <div className={styles.logo}>
+            <a className={styles.navigationActive} href="/#/author/profile?id=23">
+              <img
+                src="/resources/images/brand/ilim-tech-logo.png"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+        <div className="mr-4">
           <LanguageSelector />
         </div>
         <div className="mr-4">

@@ -32,7 +32,9 @@ class Info extends React.Component {
             <dt className="col-xl-12">Related tags:</dt>
             <dd className="col-xl-12">
               {familiarTags.map(tag => (
-                <span className="badge badge-default mr-1" key={tag.id}>{tag.name}</span>
+                <a href={`/#/tag?name=${tag.name}`} key={tag.id}>
+                  <span className="badge badge-default mr-1" key={tag.id}>{tag.name}</span>
+                </a>
               ))}
             </dd>
           </dl>
