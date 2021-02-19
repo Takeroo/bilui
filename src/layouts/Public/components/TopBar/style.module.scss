@@ -22,3 +22,33 @@
   }
 }
 
+
+.icon {
+  font-size: 18px;
+  display: none;
+}
+
+.parentSmall {
+  display: none;
+}
+
+@media screen and (max-width: 620px) {
+  .title {
+    display: none;
+  }
+
+  .icon {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 505px) {
+  .parentBig {
+    display: none;
+  }
+
+  .parentSmall {
+    display: block;
+  }
+}
+

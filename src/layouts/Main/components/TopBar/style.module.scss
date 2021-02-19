@@ -15,10 +15,39 @@
 
 
 .logo {
-  height: 64px;
+  height: 66px;
   overflow: hidden;
   img {
-    height: 36px;
+    height: 28px;
+  }
+}
+
+.icon {
+  font-size: 18px;
+  display: none;
+}
+
+.parentSmall {
+  display: none;
+}
+
+@media screen and (max-width: 620px) {
+  .title {
+    display: none;
+  }
+
+  .icon {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .parentBig {
+    display: none;
+  }
+
+  .parentSmall {
+    display: block;
   }
 }
 
